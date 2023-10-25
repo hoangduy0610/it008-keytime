@@ -1,0 +1,13 @@
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.csproj.AssemblyReference.cache
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.Form1.resources
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.Properties.Resources.resources
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.csproj.GenerateResource.cache
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.csproj.CoreCompileInputs.cache
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\bin\Debug\IT008-KeyTime.exe.config
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\bin\Debug\IT008-KeyTime.exe
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\bin\Debug\IT008-KeyTime.pdb
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.GiaHan.resources
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.exe
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.pdb
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.TraThietBi.resources
+C:\Users\Chinh-ngu\Desktop\code\IT008.O14-LT\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.ThueThietBi.resources
