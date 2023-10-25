@@ -1,0 +1,12 @@
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\bin\Debug\IT008-KeyTime.exe.config
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\bin\Debug\IT008-KeyTime.exe
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\bin\Debug\IT008-KeyTime.pdb
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.Form1.resources
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.Loginform.resources
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.Properties.Resources.resources
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.csproj.GenerateResource.cache
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.exe
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008-KeyTime.pdb
+C:\Users\Lenovo\Desktop\LAPTRINHTQ\it008-keytime\IT008-KeyTime\obj\Debug\IT008_KeyTime.Registrationform.resources
