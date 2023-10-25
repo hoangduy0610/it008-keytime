@@ -16,5 +16,15 @@ namespace IT008_KeyTime
         {
             InitializeComponent();
         }
+
+        private void materialMaskedTextBox2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void materialButton5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
