@@ -16,7 +16,7 @@ namespace IT008_KeyTime
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThueThietBi());
+            Application.Run(new Form1());
         }
     }
 }

@@ -240,11 +240,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-=======
     <Compile Include="ThueThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +254,19 @@
     </Compile>
     <Compile Include="TraThietBi.Designer.cs">
       <DependentUpon>TraThietBi.cs</DependentUpon>
+    <Compile Include="Loginform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loginform.Designer.cs">
+      <DependentUpon>Loginform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrationform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrationform.Designer.cs">
+      <DependentUpon>Registrationform.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -263,7 +274,9 @@
     <EmbeddedResource Include="GiaHan.resx">
       <DependentUpon>GiaHan.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> c1c50ed436b8d730ed07b85f990e9833e2fdd8b3
+    <EmbeddedResource Include="Loginform.resx">
+      <DependentUpon>Loginform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -273,16 +286,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <None Include="packages.config" />
-=======
     <EmbeddedResource Include="ThueThietBi.resx">
       <DependentUpon>ThueThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraThietBi.resx">
       <DependentUpon>TraThietBi.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> c1c50ed436b8d730ed07b85f990e9833e2fdd8b3
+    <EmbeddedResource Include="Registrationform.resx">
+      <DependentUpon>Registrationform.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
