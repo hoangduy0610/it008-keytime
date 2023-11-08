@@ -232,11 +232,38 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaHan.Designer.cs">
+      <DependentUpon>GiaHan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <Compile Include="ThueThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThueThietBi.Designer.cs">
+      <DependentUpon>ThueThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraThietBi.Designer.cs">
+      <DependentUpon>TraThietBi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaHan.resx">
+      <DependentUpon>GiaHan.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> c1c50ed436b8d730ed07b85f990e9833e2fdd8b3
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -246,7 +273,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <None Include="packages.config" />
+=======
+    <EmbeddedResource Include="ThueThietBi.resx">
+      <DependentUpon>ThueThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraThietBi.resx">
+      <DependentUpon>TraThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> c1c50ed436b8d730ed07b85f990e9833e2fdd8b3
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
