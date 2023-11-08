@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IT008_KeyTime.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,25 @@ namespace IT008_KeyTime
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            button1.Enabled = false;
+            var username = textBox1.Text;
+            var password = textBox2.Text;
+            var statement = "SELECT * FROM tbl_users WHERE username ='" + username + "'";
+            var user = PostgresHelper.QueryFirst<User>(statement);
+            if (user.password == password)
+            {
+                MessageBox.Show("Login success");
+            } else
+            {
+                MessageBox.Show("Login failed");
+            }
+            this.Cursor = Cursors.Default;
+            button1.Enabled = true;
         }
     }
 }

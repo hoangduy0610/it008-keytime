@@ -16,7 +16,7 @@ namespace IT008_KeyTime
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Item());
+            Application.Run(new Loginform());
         }
     }
 }
