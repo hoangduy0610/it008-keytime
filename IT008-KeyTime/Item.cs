@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IT008_KeyTime
 {
-    public partial class Form1 : Form
+    public partial class Item : Form
     {
-        public Form1()
+        public Item()
         {
             InitializeComponent();
         }

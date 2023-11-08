@@ -1,6 +1,6 @@
 ﻿namespace IT008_KeyTime
 {
-    partial class Form1
+    partial class Item
     {
         /// <summary>
         /// Required designer variable.
