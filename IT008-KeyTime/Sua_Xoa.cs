@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace IT008_KeyTime
 {
-    public partial class Registrationform : Form
+    public partial class Sua_Xoa : Form
     {
-        public Registrationform()
+        public Sua_Xoa()
         {
             InitializeComponent();
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void materialMaskedTextBox2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void materialButton1_Click(object sender, EventArgs e)
+        private void materialButton5_Click(object sender, EventArgs e)
         {
 
         }

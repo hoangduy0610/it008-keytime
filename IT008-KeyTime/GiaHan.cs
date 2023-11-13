@@ -50,20 +50,20 @@ namespace IT008_KeyTime
             textBox2.ReadOnly = true;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                // Lấy dòng đã chọn
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+        //private void button1_Click_1(object sender, EventArgs e)
+        //{
+        //    if (dataGridView1.SelectedRows.Count > 0)
+        //    {
+        //        // Lấy dòng đã chọn
+        //        DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                // Lấy giá trị mới từ DateTimePicker
-                DateTime newDate = dateTimePicker1.Value;
+        //        // Lấy giá trị mới từ DateTimePicker
+        //        DateTime newDate = dateTimePicker1.Value;
 
-                // Cập nhật cột 4 của dòng đã chọn với giá trị mới
-                selectedRow.Cells[3].Value = newDate;
-            }
-        }
+        //        // Cập nhật cột 4 của dòng đã chọn với giá trị mới
+        //        selectedRow.Cells[3].Value = newDate;
+        //    }
+        //}
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -91,6 +91,21 @@ namespace IT008_KeyTime
                     MessageBox.Show("Dữ liệu ngày không hợp lệ");
                 }
                 //status = cellValue3;
+            }
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Lấy dòng đã chọn
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+                // Lấy giá trị mới từ DateTimePicker
+                DateTime newDate = dateTimePicker1.Value;
+
+                // Cập nhật cột 4 của dòng đã chọn với giá trị mới
+                selectedRow.Cells[3].Value = newDate;
             }
         }
     }

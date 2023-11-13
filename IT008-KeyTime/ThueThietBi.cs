@@ -70,5 +70,10 @@ namespace IT008_KeyTime
         {
 
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
