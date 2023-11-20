@@ -26,5 +26,25 @@ namespace IT008_KeyTime
         {
 
         }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

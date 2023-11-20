@@ -23,10 +23,15 @@ namespace IT008_KeyTime
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+            
+        //}
+
+        private void materialButton1_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            button1.Enabled = false;
+            materialButton1.Enabled = false;
             var username = textBox1.Text;
             var password = textBox2.Text;
             var statement = "SELECT * FROM tbl_users WHERE username ='" + username + "'";
@@ -34,12 +39,23 @@ namespace IT008_KeyTime
             if (user.password == password)
             {
                 MessageBox.Show("Login success");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Login failed");
             }
             this.Cursor = Cursors.Default;
-            button1.Enabled = true;
+            materialButton1.Enabled = true;
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Loginform_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

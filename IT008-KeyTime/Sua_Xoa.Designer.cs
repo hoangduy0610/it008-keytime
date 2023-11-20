@@ -1,6 +1,6 @@
 ﻿namespace IT008_KeyTime
 {
-    partial class Item
+    partial class Sua_Xoa
     {
         /// <summary>
         /// Required designer variable.
@@ -90,7 +90,6 @@
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // materialTextBox1
             // 
@@ -282,7 +281,6 @@
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
-            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // materialButton3
             // 
@@ -302,7 +300,6 @@
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
-            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
             // 
             // materialButton4
             // 
@@ -322,7 +319,6 @@
             this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton4.UseAccentColor = false;
             this.materialButton4.UseVisualStyleBackColor = true;
-            this.materialButton4.Click += new System.EventHandler(this.materialButton4_Click);
             // 
             // materialButton5
             // 
@@ -464,7 +460,7 @@
             this.TuKhoa.Name = "TuKhoa";
             this.TuKhoa.Width = 200;
             // 
-            // Item
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -489,7 +485,7 @@
             this.Controls.Add(this.materialTextBox1);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.materialLabel1);
-            this.Name = "Item";
+            this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -47,8 +47,8 @@ namespace IT008_KeyTime
 
             dataGridView1.ReadOnly = true;
 
-            textBox1.ReadOnly = true;
-            textBox2.ReadOnly = true;
+            materialTextBox21.ReadOnly = true;
+            materialTextBox22.ReadOnly = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -63,13 +63,30 @@ namespace IT008_KeyTime
                 string cellValue2 = selectedRow.Cells[1].Value.ToString(); // Cột 2 (Tên Thiết Bị)
                 string cellValue3 = selectedRow.Cells[2].Value.ToString(); // Cột 3 (Trạng Thái)
 
-                textBox1.Text = cellValue1;
-                textBox2.Text = cellValue2;
+                materialTextBox21.Text = cellValue1;
+                materialTextBox22.Text = cellValue2;
                 status = cellValue3;
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    if (status == "Đã thuê")
+        //    {
+        //        if (dataGridView1.SelectedRows.Count > 0)
+        //        {
+        //            // Lấy dòng được chọn
+        //            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+        //            // Đặt giá trị mới cho cột "Trạng Thái"
+        //            selectedRow.Cells["Trạng Thái"].Value = "Chưa thuê";
+        //            selectedRow.Cells["Ngày Trả Dự Kiến"].Value = "-";
+        //        }
+        //    }
+        //    else MessageBox.Show("Thiết bị này chưa được thuê");
+        //}
+
+        private void materialButton1_Click(object sender, EventArgs e)
         {
             if (status == "Đã thuê")
             {
@@ -84,6 +101,16 @@ namespace IT008_KeyTime
                 }
             }
             else MessageBox.Show("Thiết bị này chưa được thuê");
+        }
+
+        private void materialTextBox21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox22_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
