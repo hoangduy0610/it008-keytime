@@ -1,5 +1,6 @@
 ﻿using IT008_KeyTime.Commons;
 using IT008_KeyTime.Models;
+using IT008_KeyTime.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +41,8 @@ namespace IT008_KeyTime
             if (user.password == password)
             {
                 MessageBox.Show("Login success");
-                Item form = new Item();
+                Store._user = user;
+                DashboardForm form = new DashboardForm();
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
@@ -51,14 +53,6 @@ namespace IT008_KeyTime
             }
             this.Cursor = Cursors.Default;
             materialButton1.Enabled = true;
-        }
-
-        private void materialButton2_Click(object sender, EventArgs e)
-        {
-            Registrationform form = new Registrationform();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
         }
 
         private void Loginform_Load(object sender, EventArgs e)

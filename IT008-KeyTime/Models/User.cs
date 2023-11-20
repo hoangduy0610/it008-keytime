@@ -18,5 +18,6 @@ namespace IT008_KeyTime.Models
         public string email { get; set; }
         public string phone { get; set; }
         public string address { get; set; }
+        public int role { get; set; }
     }
 }
