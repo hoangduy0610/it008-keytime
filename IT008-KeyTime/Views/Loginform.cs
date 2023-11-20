@@ -1,4 +1,5 @@
-﻿using IT008_KeyTime.Models;
+﻿using IT008_KeyTime.Commons;
+using IT008_KeyTime.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,10 @@ namespace IT008_KeyTime
             if (user.password == password)
             {
                 MessageBox.Show("Login success");
+                Item form = new Item();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
             else
             {
@@ -50,7 +55,10 @@ namespace IT008_KeyTime
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-
+            Registrationform form = new Registrationform();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void Loginform_Load(object sender, EventArgs e)

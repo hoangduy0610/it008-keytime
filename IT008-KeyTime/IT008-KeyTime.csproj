@@ -300,12 +300,6 @@
     <EmbeddedResource Include="Views\Item.resx">
       <DependentUpon>Item.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Views\Sua_Xoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Sua_Xoa.Designer.cs">
-      <DependentUpon>Sua_Xoa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ThueThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,9 +340,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
-    <EmbeddedResource Include="Views\Sua_Xoa.resx">
-      <DependentUpon>Sua_Xoa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ThueThietBi.resx">
       <DependentUpon>ThueThietBi.cs</DependentUpon>
     </EmbeddedResource>

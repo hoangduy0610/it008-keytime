@@ -26,5 +26,16 @@ namespace IT008_KeyTime
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            /*
+            Loginform form = new Loginform();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+            */
+            this.Close();
+        }
     }
 }
