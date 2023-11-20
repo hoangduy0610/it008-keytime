@@ -346,7 +346,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
-    <EmbeddedResource Include="Views\Sua_Xoa.resx" />
+    <EmbeddedResource Include="Views\Sua_Xoa.resx">
+      <DependentUpon>Sua_Xoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ThueThietBi.resx">
       <DependentUpon>ThueThietBi.cs</DependentUpon>
     </EmbeddedResource>
