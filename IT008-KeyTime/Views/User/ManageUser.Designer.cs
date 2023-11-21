@@ -148,7 +148,7 @@
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ManageUser";
-            this.Text = "ManageUser";
+            this.Text = "Users";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

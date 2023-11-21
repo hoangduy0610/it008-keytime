@@ -107,7 +107,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Loginform";
-            this.Text = "Loginform";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Loginform_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

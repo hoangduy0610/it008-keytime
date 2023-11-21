@@ -11,5 +11,6 @@ namespace IT008_KeyTime.Commons
     {
         public static User _user;
         public static User _currentEditing;
+        public static RentalItem _currentRentalItem;
     }
 }

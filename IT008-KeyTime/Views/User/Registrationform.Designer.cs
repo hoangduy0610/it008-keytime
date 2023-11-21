@@ -301,7 +301,7 @@
             this.Controls.Add(this.materialButton1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Registrationform";
-            this.Text = "Registrationform";
+            this.Text = "New Account";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registrationform_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

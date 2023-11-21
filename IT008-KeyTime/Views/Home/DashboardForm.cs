@@ -1,5 +1,6 @@
 ﻿using IT008_KeyTime.Commons;
 using IT008_KeyTime.Enums;
+using IT008_KeyTime.Views.Item.Rental;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace IT008_KeyTime.Views
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
-            ThueThietBi form = new ThueThietBi();
+            RentalManage form = new RentalManage();
             this.Hide();
             form.ShowDialog();
             this.Show();
@@ -34,7 +35,7 @@ namespace IT008_KeyTime.Views
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            Item form = new Item();
+            ManageItem form = new ManageItem();
             this.Hide();
             form.ShowDialog();
             this.Show();

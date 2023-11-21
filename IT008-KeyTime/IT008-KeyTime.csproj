@@ -282,69 +282,79 @@
   <ItemGroup>
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\Store.cs" />
+    <Compile Include="Enums\ItemStatus.cs" />
+    <Compile Include="Enums\RentalStatus.cs" />
     <Compile Include="Enums\Roles.cs" />
-    <Compile Include="Views\DashboardForm.cs">
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\RentalItem.cs" />
+    <Compile Include="Views\Home\DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\DashboardForm.Designer.cs">
+    <Compile Include="Views\Home\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Item.cs">
+    <Compile Include="Views\Item\Inventory\Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Item.Designer.cs">
-      <DependentUpon>Item.cs</DependentUpon>
+    <Compile Include="Views\Item\Inventory\Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\GiaHan.cs">
+    <Compile Include="Views\Item\ManageItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\GiaHan.Designer.cs">
-      <DependentUpon>GiaHan.cs</DependentUpon>
+    <Compile Include="Views\Item\ManageItem.Designer.cs">
+      <DependentUpon>ManageItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Item\Rental\ExtendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Item\Rental\ExtendForm.Designer.cs">
+      <DependentUpon>ExtendForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Commons\PostgresHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\User.cs" />
-    <EmbeddedResource Include="Views\DashboardForm.resx">
+    <EmbeddedResource Include="Views\Home\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Item.resx">
-      <DependentUpon>Item.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Item\ManageItem.resx">
+      <DependentUpon>ManageItem.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Views\ManageUser.cs">
+    <Compile Include="Views\Item\Rental\RentalManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ManageUser.Designer.cs">
+    <Compile Include="Views\Item\Rental\RentalManage.Designer.cs">
+      <DependentUpon>RentalManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\ManageUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\User\ManageUser.Designer.cs">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ThueThietBi.cs">
+    <Compile Include="Views\Item\Rental\RequestRentalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ThueThietBi.Designer.cs">
-      <DependentUpon>ThueThietBi.cs</DependentUpon>
+    <Compile Include="Views\Item\Rental\RequestRentalForm.Designer.cs">
+      <DependentUpon>RequestRentalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TraThietBi.cs">
+    <Compile Include="Views\Authentication\Loginform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\TraThietBi.Designer.cs">
-      <DependentUpon>TraThietBi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Loginform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Loginform.Designer.cs">
+    <Compile Include="Views\Authentication\Loginform.Designer.cs">
       <DependentUpon>Loginform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Registrationform.cs">
+    <Compile Include="Views\User\Registrationform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Registrationform.Designer.cs">
+    <Compile Include="Views\User\Registrationform.Designer.cs">
       <DependentUpon>Registrationform.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\GiaHan.resx">
-      <DependentUpon>GiaHan.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Item\Rental\ExtendForm.resx">
+      <DependentUpon>ExtendForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Loginform.resx">
+    <EmbeddedResource Include="Views\Authentication\Loginform.resx">
       <DependentUpon>Loginform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -358,16 +368,16 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
-    <EmbeddedResource Include="Views\ManageUser.resx">
+    <EmbeddedResource Include="Views\Item\Rental\RentalManage.resx">
+      <DependentUpon>RentalManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ThueThietBi.resx">
-      <DependentUpon>ThueThietBi.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Item\Rental\RequestRentalForm.resx">
+      <DependentUpon>RequestRentalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\TraThietBi.resx">
-      <DependentUpon>TraThietBi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Registrationform.resx">
+    <EmbeddedResource Include="Views\User\Registrationform.resx">
       <DependentUpon>Registrationform.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
