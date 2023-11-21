@@ -88,6 +88,7 @@
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // materialButton3
             // 
@@ -134,7 +135,6 @@
             this.label1.Size = new System.Drawing.Size(196, 40);
             this.label1.TabIndex = 5;
             this.label1.Text = "Selecting at lease one\r\nrow to do these actions";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ManageUser
             // 
@@ -149,7 +149,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ManageUser";
             this.Text = "ManageUser";
-            this.Load += new System.EventHandler(this.ManageUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

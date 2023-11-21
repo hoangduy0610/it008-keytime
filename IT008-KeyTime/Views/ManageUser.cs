@@ -1,4 +1,5 @@
 ﻿using IT008_KeyTime.Commons;
+using IT008_KeyTime.Enums;
 using IT008_KeyTime.Models;
 using System;
 using System.Collections.Generic;
@@ -28,11 +29,6 @@ namespace IT008_KeyTime.Views
             ShowLoading();
             backgroundWorker1.RunWorkerAsync();
             this.Show();
-        }
-
-        private void ManageUser_Load(object sender, EventArgs e)
-        {
-            
         }
 
         public void UpdateDataGridViewSource(object data)
@@ -126,9 +122,28 @@ namespace IT008_KeyTime.Views
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void materialButton2_Click(object sender, EventArgs e)
         {
-
+            // fill data from selected row of dataGridView1 to Store._currentEditing
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+                var user = selectedRow.DataBoundItem as User;
+                if (user != null)
+                {
+                    Store._currentEditing = user;
+                    Registrationform form = new Registrationform();
+                    this.Hide();
+                    form.ShowDialog();
+                    ShowLoading();
+                    backgroundWorker1.RunWorkerAsync();
+                    this.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select one row");
+            }
         }
     }
 }

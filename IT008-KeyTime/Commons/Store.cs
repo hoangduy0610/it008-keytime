@@ -10,5 +10,6 @@ namespace IT008_KeyTime.Commons
     internal class Store
     {
         public static User _user;
+        public static User _currentEditing;
     }
 }
