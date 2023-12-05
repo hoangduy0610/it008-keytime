@@ -43,8 +43,11 @@
             // 
             this.materialButton1.AutoSize = false;
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.BackColor = System.Drawing.Color.White;
             this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton1.Depth = 0;
+            this.materialButton1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
             this.materialButton1.Location = new System.Drawing.Point(13, 41);
@@ -57,15 +60,18 @@
             this.materialButton1.Text = "User manage";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.UseVisualStyleBackColor = false;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // materialButton2
             // 
             this.materialButton2.AutoSize = false;
             this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.BackColor = System.Drawing.Color.White;
             this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton2.Depth = 0;
+            this.materialButton2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
             this.materialButton2.Location = new System.Drawing.Point(13, 145);
@@ -78,15 +84,18 @@
             this.materialButton2.Text = "Item Manage";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.UseVisualStyleBackColor = false;
             this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // materialButton3
             // 
             this.materialButton3.AutoSize = false;
             this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.BackColor = System.Drawing.Color.White;
             this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton3.Depth = 0;
+            this.materialButton3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
             this.materialButton3.Location = new System.Drawing.Point(240, 41);
@@ -99,15 +108,18 @@
             this.materialButton3.Text = "Inventory";
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.UseVisualStyleBackColor = false;
             this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
             // 
             // materialButton4
             // 
             this.materialButton4.AutoSize = false;
             this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton4.BackColor = System.Drawing.Color.White;
             this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton4.Depth = 0;
+            this.materialButton4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton4.HighEmphasis = true;
             this.materialButton4.Icon = null;
             this.materialButton4.Location = new System.Drawing.Point(240, 145);
@@ -120,11 +132,12 @@
             this.materialButton4.Text = "Rental";
             this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton4.UseAccentColor = false;
-            this.materialButton4.UseVisualStyleBackColor = true;
+            this.materialButton4.UseVisualStyleBackColor = false;
             this.materialButton4.Click += new System.EventHandler(this.materialButton4_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -138,6 +151,7 @@
             this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
+            this.accountToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
             this.accountToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.accountToolStripMenuItem.Text = "Home";
@@ -161,12 +175,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::IT008_KeyTime.Properties.Resources.bg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(449, 268);
             this.Controls.Add(this.materialButton4);
             this.Controls.Add(this.materialButton3);
             this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DashboardForm";
             this.Text = "Dashboard";
