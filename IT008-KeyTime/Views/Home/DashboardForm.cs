@@ -1,5 +1,6 @@
 ﻿using IT008_KeyTime.Commons;
 using IT008_KeyTime.Enums;
+using IT008_KeyTime.Views.Item.Inventory;
 using IT008_KeyTime.Views.Item.Rental;
 using System;
 using System.Collections.Generic;
@@ -81,6 +82,15 @@ namespace IT008_KeyTime.Views
             ManageUser form = new ManageUser();
             this.Hide();
             form.ShowDialog();
+            this.Show();
+        }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+            // go to Inventory
+            var inventory = new Inventory();
+            this.Hide();
+            inventory.ShowDialog();
             this.Show();
         }
     }

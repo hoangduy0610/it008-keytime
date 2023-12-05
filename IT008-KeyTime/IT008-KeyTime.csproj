@@ -51,6 +51,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
       <HintPath>packages\Bunifu.Licensing.5.0.0\lib\net40\Bunifu.Licensing.dll</HintPath>
     </Reference>
@@ -278,13 +287,22 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\Store.cs" />
+    <Compile Include="Enums\InventoryPlanStatus.cs" />
     <Compile Include="Enums\ItemStatus.cs" />
     <Compile Include="Enums\RentalStatus.cs" />
     <Compile Include="Enums\Roles.cs" />
+    <Compile Include="Models\InventoryItem.cs" />
+    <Compile Include="Models\InventoryPlan.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\RentalItem.cs" />
     <Compile Include="Views\Home\DashboardForm.cs">
@@ -292,6 +310,36 @@
     </Compile>
     <Compile Include="Views\Home\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\AssignItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\AssignItem.Designer.cs">
+      <DependentUpon>AssignItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\QRScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\QRScan.Designer.cs">
+      <DependentUpon>QRScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\ReportItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\ReportItem.Designer.cs">
+      <DependentUpon>ReportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\CreatePlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\CreatePlan.Designer.cs">
+      <DependentUpon>CreatePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\DoInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Item\Inventory\DoInventory.Designer.cs">
+      <DependentUpon>DoInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Item\Inventory\Inventory.cs">
       <SubType>Form</SubType>
@@ -317,6 +365,24 @@
     <Compile Include="Models\User.cs" />
     <EmbeddedResource Include="Views\Home\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Item\Inventory\AssignItem.resx">
+      <DependentUpon>AssignItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Item\Inventory\CreatePlan.resx">
+      <DependentUpon>CreatePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Item\Inventory\DoInventory.resx">
+      <DependentUpon>DoInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Item\Inventory\Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Item\Inventory\QRScan.resx">
+      <DependentUpon>QRScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Item\Inventory\ReportItem.resx">
+      <DependentUpon>ReportItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Item\ManageItem.resx">
       <DependentUpon>ManageItem.cs</DependentUpon>
