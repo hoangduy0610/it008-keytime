@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registrationform));
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
@@ -56,12 +57,12 @@
             this.materialButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(11, 294);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.materialButton1.Location = new System.Drawing.Point(24, 534);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(193, 50);
+            this.materialButton1.Size = new System.Drawing.Size(386, 96);
             this.materialButton1.TabIndex = 13;
             this.materialButton1.Text = "Create Account";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -88,11 +89,12 @@
             "Property Manager",
             "Inventory Manager",
             "Normal User"});
-            this.materialComboBox1.Location = new System.Drawing.Point(12, 205);
+            this.materialComboBox1.Location = new System.Drawing.Point(24, 394);
+            this.materialComboBox1.Margin = new System.Windows.Forms.Padding(6);
             this.materialComboBox1.MaxDropDownItems = 4;
             this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(192, 49);
+            this.materialComboBox1.Size = new System.Drawing.Size(380, 49);
             this.materialComboBox1.StartIndex = 0;
             this.materialComboBox1.TabIndex = 14;
             // 
@@ -104,12 +106,13 @@
             this.materialTextBox1.Depth = 0;
             this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(12, 30);
+            this.materialTextBox1.Location = new System.Drawing.Point(24, 58);
+            this.materialTextBox1.Margin = new System.Windows.Forms.Padding(6);
             this.materialTextBox1.MaxLength = 50;
             this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox1.Multiline = false;
             this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(192, 50);
+            this.materialTextBox1.Size = new System.Drawing.Size(384, 50);
             this.materialTextBox1.TabIndex = 16;
             this.materialTextBox1.Text = "";
             this.materialTextBox1.TrailingIcon = null;
@@ -122,12 +125,13 @@
             this.materialTextBox2.Depth = 0;
             this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(12, 119);
+            this.materialTextBox2.Location = new System.Drawing.Point(24, 229);
+            this.materialTextBox2.Margin = new System.Windows.Forms.Padding(6);
             this.materialTextBox2.MaxLength = 50;
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox2.Multiline = false;
             this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(192, 50);
+            this.materialTextBox2.Size = new System.Drawing.Size(384, 50);
             this.materialTextBox2.TabIndex = 18;
             this.materialTextBox2.Text = "";
             this.materialTextBox2.TrailingIcon = null;
@@ -140,12 +144,13 @@
             this.materialTextBox3.Depth = 0;
             this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox3.LeadingIcon = null;
-            this.materialTextBox3.Location = new System.Drawing.Point(228, 119);
+            this.materialTextBox3.Location = new System.Drawing.Point(456, 229);
+            this.materialTextBox3.Margin = new System.Windows.Forms.Padding(6);
             this.materialTextBox3.MaxLength = 50;
             this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox3.Multiline = false;
             this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(192, 50);
+            this.materialTextBox3.Size = new System.Drawing.Size(384, 50);
             this.materialTextBox3.TabIndex = 22;
             this.materialTextBox3.Text = "";
             this.materialTextBox3.TrailingIcon = null;
@@ -158,12 +163,13 @@
             this.materialTextBox4.Depth = 0;
             this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox4.LeadingIcon = null;
-            this.materialTextBox4.Location = new System.Drawing.Point(228, 30);
+            this.materialTextBox4.Location = new System.Drawing.Point(456, 58);
+            this.materialTextBox4.Margin = new System.Windows.Forms.Padding(6);
             this.materialTextBox4.MaxLength = 50;
             this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox4.Multiline = false;
             this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(192, 50);
+            this.materialTextBox4.Size = new System.Drawing.Size(384, 50);
             this.materialTextBox4.TabIndex = 20;
             this.materialTextBox4.Text = "";
             this.materialTextBox4.TrailingIcon = null;
@@ -176,12 +182,13 @@
             this.materialTextBox5.Depth = 0;
             this.materialTextBox5.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox5.LeadingIcon = null;
-            this.materialTextBox5.Location = new System.Drawing.Point(228, 294);
+            this.materialTextBox5.Location = new System.Drawing.Point(456, 565);
+            this.materialTextBox5.Margin = new System.Windows.Forms.Padding(6);
             this.materialTextBox5.MaxLength = 50;
             this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox5.Multiline = false;
             this.materialTextBox5.Name = "materialTextBox5";
-            this.materialTextBox5.Size = new System.Drawing.Size(192, 50);
+            this.materialTextBox5.Size = new System.Drawing.Size(384, 50);
             this.materialTextBox5.TabIndex = 26;
             this.materialTextBox5.Text = "";
             this.materialTextBox5.TrailingIcon = null;
@@ -194,12 +201,13 @@
             this.materialTextBox6.Depth = 0;
             this.materialTextBox6.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox6.LeadingIcon = null;
-            this.materialTextBox6.Location = new System.Drawing.Point(228, 205);
+            this.materialTextBox6.Location = new System.Drawing.Point(456, 394);
+            this.materialTextBox6.Margin = new System.Windows.Forms.Padding(6);
             this.materialTextBox6.MaxLength = 50;
             this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox6.Multiline = false;
             this.materialTextBox6.Name = "materialTextBox6";
-            this.materialTextBox6.Size = new System.Drawing.Size(192, 50);
+            this.materialTextBox6.Size = new System.Drawing.Size(384, 50);
             this.materialTextBox6.TabIndex = 24;
             this.materialTextBox6.Text = "";
             this.materialTextBox6.TrailingIcon = null;
@@ -210,9 +218,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(225, 8);
+            this.label1.Location = new System.Drawing.Point(450, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
+            this.label1.Size = new System.Drawing.Size(96, 36);
             this.label1.TabIndex = 28;
             this.label1.Text = "Name";
             // 
@@ -222,9 +231,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(223, 98);
+            this.label2.Location = new System.Drawing.Point(446, 188);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 18);
+            this.label2.Size = new System.Drawing.Size(93, 36);
             this.label2.TabIndex = 29;
             this.label2.Text = "Email";
             // 
@@ -234,9 +244,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(225, 184);
+            this.label3.Location = new System.Drawing.Point(450, 354);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
+            this.label3.Size = new System.Drawing.Size(107, 36);
             this.label3.TabIndex = 30;
             this.label3.Text = "Phone";
             // 
@@ -246,9 +257,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(225, 273);
+            this.label4.Location = new System.Drawing.Point(450, 525);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 18);
+            this.label4.Size = new System.Drawing.Size(133, 36);
             this.label4.TabIndex = 31;
             this.label4.Text = "Address";
             // 
@@ -258,9 +270,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(8, 184);
+            this.label5.Location = new System.Drawing.Point(16, 354);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 18);
+            this.label5.Size = new System.Drawing.Size(145, 36);
             this.label5.TabIndex = 32;
             this.label5.Text = "User role";
             // 
@@ -270,9 +283,10 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(8, 98);
+            this.label6.Location = new System.Drawing.Point(16, 188);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 18);
+            this.label6.Size = new System.Drawing.Size(155, 36);
             this.label6.TabIndex = 33;
             this.label6.Text = "Password";
             // 
@@ -282,19 +296,20 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(8, 8);
+            this.label7.Location = new System.Drawing.Point(16, 15);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 18);
+            this.label7.Size = new System.Drawing.Size(158, 36);
             this.label7.TabIndex = 34;
             this.label7.Text = "Username";
             // 
             // Registrationform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::IT008_KeyTime.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(441, 384);
+            this.ClientSize = new System.Drawing.Size(882, 738);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -310,7 +325,8 @@
             this.Controls.Add(this.materialTextBox1);
             this.Controls.Add(this.materialComboBox1);
             this.Controls.Add(this.materialButton1);
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Registrationform";
             this.Text = "New Account";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registrationform_FormClosing);
