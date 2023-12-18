@@ -34,6 +34,7 @@ namespace IT008_KeyTime
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
+           
             materialButton1.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
             var username = materialTextBox1.Text;
