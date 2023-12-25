@@ -28,6 +28,7 @@ namespace IT008_KeyTime.Views.Item.Inventory
 
         public void UpdateDataGridViewSource(object data)
         {
+            Console.WriteLine(data);
             if (data != null)
             {
                 if (this.dataGridView1.InvokeRequired)

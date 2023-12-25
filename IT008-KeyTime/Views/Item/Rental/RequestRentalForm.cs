@@ -2,7 +2,9 @@
 using IT008_KeyTime.Enums;
 using IT008_KeyTime.Models;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -22,13 +24,38 @@ namespace IT008_KeyTime
         {
             if (data != null)
             {
+                Console.WriteLine(data.ToString());    
+                var curItem = data as Item;
+                if (curItem != null)
+                {
+                    Console.WriteLine(curItem.id);
+                    Console.WriteLine(curItem.name);
+                }
+                 
                 if (this.dataGridView1.InvokeRequired)
                 {
                     this.dataGridView1.Invoke(new Action(() => UpdateDataGridViewSource(data)));
+                    Console.WriteLine("From Request Rental Form 1");
                 }
                 else
-                {
-                    this.dataGridView1.DataSource = data;
+                {                    
+                    var items = (List<Item>)data;                   
+                    List<MapItem> mapItem = new List<MapItem>();
+                  
+                    foreach (var item in items)
+                    {
+                        mapItem.Add(new MapItem(item));     
+                    }
+
+                    this.dataGridView1.DataSource = mapItem;
+                    Console.WriteLine("From Request Rental Form 2");
+                    //this.dataGridView1.Columns["password"].Visible = false;
+                    this.dataGridView1.Columns["status"].Visible = false;
+                    //this.dataGridView1.Columns["id"].Visible = false;
+                    //this.dataGridView1.Columns["name"].Visible = false;
+                    //this.dataGridView1.Columns["room"].Visible = false;
+                    //this.dataGridView1.Columns["description"].Visible = false;
+                    //this.dataGridView1.Columns["note"].Visible = false;
                 }
             }
             else
@@ -115,7 +142,8 @@ namespace IT008_KeyTime
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            var data = PostgresHelper.GetAll<Item>();
+            //var data = PostgresHelper.GetAll<Item>();
+            var data = PostgresHelper.GetAll<Item>().Where(item => item.status == (int)ItemStatusEnum.IDLE).ToList();
             UpdateDataGridViewSource(data);
         }
 

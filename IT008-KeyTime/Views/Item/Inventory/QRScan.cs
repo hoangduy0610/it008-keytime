@@ -21,6 +21,7 @@ namespace IT008_KeyTime.Views.Item.Inventory
         const string urlStream = "http://113.161.85.182/webcapture.jpg?command=snap&channel=1?1701774507";
         private FilterInfoCollection CaptureDevice;
         private VideoCaptureDevice FinalFrame;
+        ZXing.BarcodeReader Reader = new ZXing.BarcodeReader();
         public QRScan()
         {
             InitializeComponent();
@@ -63,11 +64,7 @@ namespace IT008_KeyTime.Views.Item.Inventory
         {
             Bitmap bmp = (Bitmap)eventArgs.Frame.Clone();
             pictureBox1.Image = bmp;
-            if (timer1.Enabled == false)
-            {
-                timer1.Enabled = true;
-                timer1.Start();
-            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -77,26 +74,31 @@ namespace IT008_KeyTime.Views.Item.Inventory
             if (img != null)
             {
                 Console.WriteLine("img != null");
-                ZXing.BarcodeReader Reader = new ZXing.BarcodeReader();
                 Result result = Reader.Decode(img);
                 try
                 {
-                    string decoded = result.ToString().Trim();
-                    MessageBox.Show("Inventory for item id: " + decoded);
-
-                    img.Dispose();
+                    if (result != null)
+                    {
+                        string decoded = result.ToString().Trim();
+                        MessageBox.Show("Inventory for item id: " + decoded);
+                        img.Dispose();
+                    }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message + "");
                 }
-
             }
         }
 
         private void QRScan_Load(object sender, EventArgs e)
         {
             ConnectMJPEG();
+            //if (timer1.Enabled == false)
+            //{
+                timer1.Enabled = true;
+                timer1.Start();
+            //}
         }
 
         private void QRScan_FormClosing(object sender, FormClosingEventArgs e)

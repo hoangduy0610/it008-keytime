@@ -63,6 +63,29 @@ namespace IT008_KeyTime
             var status = materialComboBox1.SelectedIndex;
             var note = materialMultiLineTextBox1.Text;
             var item = new Item();
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Please input item's name.");
+                materialTextBox2.Focus();
+                materialButton1.Enabled = true;
+                return;
+            }
+            if (string.IsNullOrEmpty(room))
+            {
+                MessageBox.Show("Please input item's room.");
+                materialTextBox3.Focus();
+                materialButton1.Enabled = true;
+                return;
+            }
+            if (string.IsNullOrEmpty(description))
+            {
+                MessageBox.Show("Please input item's description.");
+                materialTextBox3.Focus();
+                materialButton1.Enabled = true;
+                return;
+            }
+
             item.name = name;
             item.room = room;
             item.description = description;
@@ -148,7 +171,23 @@ namespace IT008_KeyTime
                 }
                 else
                 {
-                    this.dataGridView1.DataSource = data;
+                    var items = (List<Item>)data;
+                    List<MapItem> mapItem = new List<MapItem>();
+
+
+                    foreach (var item in items)
+                    {
+                        mapItem.Add(new MapItem(item));
+                    }
+
+                    this.dataGridView1.DataSource = mapItem;
+                    //this.dataGridView1.Columns["id"].Visible = false;
+                    //this.dataGridView1.Columns["user_id"].Visible = false;
+                    //this.dataGridView1.Columns["item_id"].Visible = false;
+                    //this.dataGridView1.Columns["rental_start"].Visible = false;
+                    //this.dataGridView1.Columns["expect_return"].Visible = false;
+                    //this.dataGridView1.Columns["actual_return"].Visible = false;
+                    this.dataGridView1.Columns["status"].Visible = false;
                 }
             }
             else

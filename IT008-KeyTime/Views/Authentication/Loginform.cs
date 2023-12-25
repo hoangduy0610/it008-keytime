@@ -59,5 +59,28 @@ namespace IT008_KeyTime
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.PasswordChar = '*';
+        }
+
+        private void Loginform_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Gọi sự kiện click của nút đăng nhập
+                materialButton1_Click(sender, e);
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Gọi sự kiện click của nút đăng nhập
+                materialButton1_Click(sender, e);
+            }
+        }
     }
 }

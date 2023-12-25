@@ -7,8 +7,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel;
+
 
 namespace IT008_KeyTime
 {
@@ -31,6 +34,22 @@ namespace IT008_KeyTime
                 this.Text = "Update User";
             }
         }
+        static bool IsEmailValid(string email)
+        {
+            // Biểu thức chính quy để kiểm tra định dạng email
+            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+
+            // Kiểm tra sự khớp giữa địa chỉ email và biểu thức chính quy
+            return Regex.IsMatch(email, pattern);
+        }
+        static bool IsPhoneNumberValid(string phoneNumber)
+        {
+            // Biểu thức chính quy để kiểm tra số điện thoại
+            string pattern = @"^(03[2-9]|05[2-9]|07[0-9]|08[1-9]|09[0-9]|01[2-9])[0-9]{7}$";
+
+            // Kiểm tra sự khớp giữa số điện thoại và biểu thức chính quy
+            return Regex.IsMatch(phoneNumber, pattern);
+        }
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
@@ -48,36 +67,61 @@ namespace IT008_KeyTime
             {
                 MessageBox.Show("Please input your username.");
                 materialTextBox1.Focus();
+                materialButton1.Enabled = true;
                 return;
             }
             if (string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please input your password.");
                 materialTextBox2.Focus();
+                materialButton1.Enabled = true;
                 return;
             }
             if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("Please input your name.");
                 materialTextBox4.Focus();
+                materialButton1.Enabled = true;
                 return;
             }
+
             if (string.IsNullOrEmpty(email))
             {
                 MessageBox.Show("Please input your email.");
                 materialTextBox3.Focus();
+                materialButton1.Enabled = true;
                 return;
             }
+            if (!IsEmailValid(email))
+            {
+                MessageBox.Show("Email is invalid.");
+                materialTextBox3.Focus();
+                materialButton1.Enabled = true;
+                return; 
+            }
+
+
             if (string.IsNullOrEmpty(phone))
             {
                 MessageBox.Show("Please input your phone.");
                 materialTextBox6.Focus();
+                materialButton1.Enabled = true;
                 return;
             }
+            if (!IsPhoneNumberValid(phone))
+            {
+                MessageBox.Show("Phone number is invalid.");
+                materialTextBox6.Focus();
+                materialButton1.Enabled = true;
+                return;
+            }
+
+
             if (string.IsNullOrEmpty(address))
             {
                 MessageBox.Show("Please input your address.");
                 materialTextBox5.Focus();
+                materialButton1.Enabled = true;
                 return;
             }
 

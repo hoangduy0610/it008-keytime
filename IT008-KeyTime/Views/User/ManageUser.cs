@@ -41,8 +41,17 @@ namespace IT008_KeyTime.Views
                 }
                 else
                 {
-                    this.dataGridView1.DataSource = data;
+                    var users = (List<User>)data;
+                    List<MapUser> mapUsers = new List<MapUser>();       
+
+                    foreach (var user in users)
+                    {
+                        mapUsers.Add(new MapUser(user));        
+                    }
+
+                    this.dataGridView1.DataSource = mapUsers;
                     this.dataGridView1.Columns["password"].Visible = false;
+                    this.dataGridView1.Columns["role"].Visible = false;
                 }
             }
             else
@@ -84,28 +93,40 @@ namespace IT008_KeyTime.Views
 
         private void materialButton3_Click(object sender, EventArgs e)
         {
-            materialButton3.Enabled = false;
-            Cursor.Current = Cursors.WaitCursor;
-            ShowLoading();
-            // Delete selecting row in dataGridView1
-            if (dataGridView1.SelectedRows.Count > 0)
+            DialogResult result = MessageBox.Show("Delete this user?", "Confirm Delete", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
             {
-                var selectedRow = dataGridView1.SelectedRows[0];
-                var user = selectedRow.DataBoundItem as User;
-                if (user != null)
+                try
                 {
-                    PostgresHelper.Delete(user);
-                    backgroundWorker1.RunWorkerAsync();
+                    materialButton3.Enabled = false;
+                    Cursor.Current = Cursors.WaitCursor;
+                    ShowLoading();
+
+                    // Delete selecting row in dataGridView1
+                    if (dataGridView1.SelectedRows.Count > 0)
+                    {
+                        var selectedRow = dataGridView1.SelectedRows[0];
+                        var user = selectedRow.DataBoundItem as User;
+                        if (user != null)
+                        {
+                            PostgresHelper.Delete(user);
+                            backgroundWorker1.RunWorkerAsync();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select at least one row");
+                    }
+                }
+                finally
+                {
+                    materialButton3.Enabled = true;
+                    Cursor.Current = Cursors.Default;
+                    HideLoading();
                 }
             }
-            else
-            {
-                MessageBox.Show("Please select at least one row");
-                HideLoading();
-            }
-            materialButton3.Enabled = true;
-            Cursor.Current = Cursors.Default;
         }
+
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {

@@ -80,6 +80,8 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(310, 41);
             this.textBox2.TabIndex = 5;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // materialButton1
             // 
@@ -122,6 +124,7 @@
             this.Name = "Loginform";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Loginform_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Loginform_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -31,7 +31,17 @@ namespace IT008_KeyTime.Views.Item.Rental
                 }
                 else
                 {
-                    this.dataGridView1.DataSource = data;
+                    var rentals = (List<RentalItem>)data;
+                    List<MapRentalItem> mapRentalItems = new List<MapRentalItem>();
+
+
+                    foreach (var rental in rentals)
+                    {
+                        mapRentalItems.Add(new MapRentalItem(rental));
+                    }
+
+                    this.dataGridView1.DataSource = mapRentalItems;
+                    this.dataGridView1.Columns["status"].Visible = false;
                 }
             }
             else
