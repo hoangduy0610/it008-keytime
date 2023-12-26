@@ -54,12 +54,12 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(572, 76);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridView1.Location = new System.Drawing.Point(381, 49);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1016, 819);
+            this.dataGridView1.Size = new System.Drawing.Size(666, 506);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -71,15 +71,15 @@
             this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton1.Depth = 0;
             this.materialButton1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.materialButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(26, 76);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.materialButton1.Location = new System.Drawing.Point(27, 50);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(520, 113);
+            this.materialButton1.Size = new System.Drawing.Size(334, 60);
             this.materialButton1.TabIndex = 1;
             this.materialButton1.Text = "Add new plan";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -95,15 +95,15 @@
             this.materialButton2.Depth = 0;
             this.materialButton2.Enabled = false;
             this.materialButton2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.materialButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(26, 213);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.materialButton2.Location = new System.Drawing.Point(27, 122);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(520, 113);
+            this.materialButton2.Size = new System.Drawing.Size(334, 60);
             this.materialButton2.TabIndex = 2;
             this.materialButton2.Text = "Edit plan";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -119,15 +119,15 @@
             this.materialButton3.Depth = 0;
             this.materialButton3.Enabled = false;
             this.materialButton3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.materialButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(26, 487);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.materialButton3.Location = new System.Drawing.Point(27, 349);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
             this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(520, 113);
+            this.materialButton3.Size = new System.Drawing.Size(334, 60);
             this.materialButton3.TabIndex = 3;
             this.materialButton3.Text = "Assign Item";
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -143,15 +143,15 @@
             this.materialButton4.Depth = 0;
             this.materialButton4.Enabled = false;
             this.materialButton4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.materialButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton4.HighEmphasis = true;
             this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(26, 624);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.materialButton4.Location = new System.Drawing.Point(27, 422);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton4.Name = "materialButton4";
             this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton4.Size = new System.Drawing.Size(520, 113);
+            this.materialButton4.Size = new System.Drawing.Size(334, 60);
             this.materialButton4.TabIndex = 4;
             this.materialButton4.Text = "Start Inventory";
             this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -167,15 +167,15 @@
             this.materialButton5.Depth = 0;
             this.materialButton5.Enabled = false;
             this.materialButton5.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.materialButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton5.HighEmphasis = true;
             this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(26, 754);
-            this.materialButton5.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.materialButton5.Location = new System.Drawing.Point(27, 495);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton5.Name = "materialButton5";
             this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton5.Size = new System.Drawing.Size(520, 113);
+            this.materialButton5.Size = new System.Drawing.Size(334, 60);
             this.materialButton5.TabIndex = 5;
             this.materialButton5.Text = "Do Inventory";
             this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -191,15 +191,15 @@
             this.materialButton6.Depth = 0;
             this.materialButton6.Enabled = false;
             this.materialButton6.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.materialButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton6.HighEmphasis = true;
             this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(26, 350);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.materialButton6.Location = new System.Drawing.Point(27, 195);
+            this.materialButton6.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton6.Name = "materialButton6";
             this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton6.Size = new System.Drawing.Size(520, 113);
+            this.materialButton6.Size = new System.Drawing.Size(334, 60);
             this.materialButton6.TabIndex = 6;
             this.materialButton6.Text = "Delete plan";
             this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -215,23 +215,23 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::IT008_KeyTime.Properties.Resources.Loading;
-            this.pictureBox1.Location = new System.Drawing.Point(894, 268);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox1.Location = new System.Drawing.Point(643, 185);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(358, 321);
+            this.pictureBox1.Size = new System.Drawing.Size(205, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1606, 42);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1071, 26);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -242,34 +242,34 @@
             this.exitToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(99, 38);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // Inventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::IT008_KeyTime.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1606, 910);
+            this.ClientSize = new System.Drawing.Size(1071, 582);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialButton6);
             this.Controls.Add(this.materialButton5);
@@ -281,7 +281,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Inventory";
             this.Text = "Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

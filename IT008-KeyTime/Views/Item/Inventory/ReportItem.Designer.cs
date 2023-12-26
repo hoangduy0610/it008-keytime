@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportItem));
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,6 +38,7 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,31 +52,18 @@
             this.materialButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(187, 545);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.materialButton1.Location = new System.Drawing.Point(120, 351);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(140, 43);
+            this.materialButton1.Size = new System.Drawing.Size(100, 33);
             this.materialButton1.TabIndex = 2;
             this.materialButton1.Text = "Report";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(35, 104);
-            this.materialLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(98, 33);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Status";
-            this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // materialMultiLineTextBox1
             // 
@@ -85,11 +72,11 @@
             this.materialMultiLineTextBox1.Depth = 0;
             this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(38, 278);
-            this.materialMultiLineTextBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(23, 178);
+            this.materialMultiLineTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(456, 231);
+            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(304, 148);
             this.materialMultiLineTextBox1.TabIndex = 4;
             this.materialMultiLineTextBox1.Text = "";
             // 
@@ -111,12 +98,12 @@
             "NORMAL",
             "BROKEN",
             "LOST"});
-            this.materialComboBox1.Location = new System.Drawing.Point(38, 143);
-            this.materialComboBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.materialComboBox1.Location = new System.Drawing.Point(23, 80);
+            this.materialComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialComboBox1.MaxDropDownItems = 4;
             this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(456, 49);
+            this.materialComboBox1.Size = new System.Drawing.Size(305, 49);
             this.materialComboBox1.StartIndex = 0;
             this.materialComboBox1.TabIndex = 0;
             // 
@@ -124,24 +111,24 @@
             // 
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(35, 239);
-            this.materialLabel2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.materialLabel2.Location = new System.Drawing.Point(23, 153);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(98, 33);
+            this.materialLabel2.Size = new System.Drawing.Size(65, 21);
             this.materialLabel2.TabIndex = 5;
             this.materialLabel2.Text = "Note";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(538, 42);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(352, 26);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -152,34 +139,47 @@
             this.exitToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(99, 38);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(23, 55);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(65, 21);
+            this.materialLabel1.TabIndex = 1;
+            this.materialLabel1.Text = "Status";
+            this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ReportItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::IT008_KeyTime.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(538, 642);
+            this.ClientSize = new System.Drawing.Size(352, 411);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialComboBox1);
             this.Controls.Add(this.materialMultiLineTextBox1);
@@ -188,7 +188,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReportItem";
             this.Text = "Report Item";
             this.menuStrip1.ResumeLayout(false);
@@ -201,7 +201,6 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
@@ -210,5 +209,6 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

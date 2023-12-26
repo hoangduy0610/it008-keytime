@@ -187,5 +187,10 @@ namespace IT008_KeyTime.Views.Item.Inventory
                 materialButton2.Enabled = false;
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

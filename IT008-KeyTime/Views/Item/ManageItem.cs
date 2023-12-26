@@ -268,5 +268,10 @@ namespace IT008_KeyTime
                 materialButton3.Enabled = true;
             }
         }
+
+        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
