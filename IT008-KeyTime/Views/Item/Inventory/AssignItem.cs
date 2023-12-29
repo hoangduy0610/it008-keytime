@@ -187,5 +187,28 @@ namespace IT008_KeyTime.Views.Item.Inventory
                 materialButton2.Enabled = false;
             }
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
+            this.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Close();
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

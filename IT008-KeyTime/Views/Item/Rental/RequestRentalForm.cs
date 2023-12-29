@@ -44,18 +44,15 @@ namespace IT008_KeyTime
                   
                     foreach (var item in items)
                     {
-                        mapItem.Add(new MapItem(item));     
+                        if (item.status == 0)
+                        {
+                            mapItem.Add(new MapItem(item));
+                        }
                     }
 
                     this.dataGridView1.DataSource = mapItem;
                     Console.WriteLine("From Request Rental Form 2");
-                    //this.dataGridView1.Columns["password"].Visible = false;
                     this.dataGridView1.Columns["status"].Visible = false;
-                    //this.dataGridView1.Columns["id"].Visible = false;
-                    //this.dataGridView1.Columns["name"].Visible = false;
-                    //this.dataGridView1.Columns["room"].Visible = false;
-                    //this.dataGridView1.Columns["description"].Visible = false;
-                    //this.dataGridView1.Columns["note"].Visible = false;
                 }
             }
             else
@@ -125,6 +122,15 @@ namespace IT008_KeyTime
             rentalItem.expect_return = dateTimePicker2.Value;
             rentalItem.status = (int)RentalStatusEnum.REQUESTED;
 
+            // Change item status 
+            int itemID = rentalItem.item_id;
+            var UpdateItemStatement = "SELECT * FROM tbl_items WHERE id ='" + itemID + "'";
+            var itemInDB = PostgresHelper.QueryFirst<Item>(UpdateItemStatement);
+
+            itemInDB.status = 1;
+            PostgresHelper.Update(itemInDB);
+            
+
             PostgresHelper.Insert(rentalItem);
             MessageBox.Show("Request success");
             materialButton1.Enabled = true;
@@ -166,7 +172,6 @@ namespace IT008_KeyTime
                 dateTimePicker2.Value = dateTimePicker1.Value;
             }
         }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // check if start date is before today
@@ -177,6 +182,24 @@ namespace IT008_KeyTime
                 return;
             }
             dateTimePicker2.Value = dateTimePicker1.Value;
+        }
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();       
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
+            this.Show();
         }
     }
 }

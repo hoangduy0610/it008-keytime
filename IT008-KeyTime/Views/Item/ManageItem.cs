@@ -10,16 +10,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+using IronXL;
 
 namespace IT008_KeyTime
 {
     public partial class ManageItem : Form
     {
         protected string _searchKeyword;
+        private BackgroundWorker backgroundWorker2;
+
         public ManageItem()
         {
             InitializeComponent();
             backgroundWorker1.RunWorkerAsync();
+
+            backgroundWorker2 = new BackgroundWorker();
+            backgroundWorker2.DoWork += new DoWorkEventHandler(backgroundWorker2_DoWork);
         }
 
         private void clearForm()
@@ -122,15 +132,24 @@ namespace IT008_KeyTime
             item.description = description;
             item.status = status;
             item.note = note;
+
             materialButton4.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
-            PostgresHelper.Update(item);
+
+            // Ask for confirmation
+            DialogResult result = MessageBox.Show("Update this item?", "Confirmation", MessageBoxButtons.OKCancel);
+
+            if (result == DialogResult.OK)
+            {
+                PostgresHelper.Update(item);
+                MessageBox.Show("Update item successfully.");
+                ShowLoading();
+                backgroundWorker1.RunWorkerAsync();
+                clearForm();
+            }
+
             Cursor.Current = Cursors.Default;
             materialButton4.Enabled = true;
-            MessageBox.Show("Update item successfully.");
-            ShowLoading();
-            backgroundWorker1.RunWorkerAsync();
-            clearForm();
         }
 
         private void materialButton3_Click(object sender, EventArgs e)
@@ -138,22 +157,33 @@ namespace IT008_KeyTime
             // Delete items
             materialButton3.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
-            ShowLoading();
+
             // Delete selecting row in dataGridView1
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // delete all selected rows
-                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show("Delete this item?", "Confirmation", MessageBoxButtons.OKCancel);
+
+                if (result == DialogResult.OK)
                 {
-                    var item = row.DataBoundItem as Item;
-                    if (item != null)
+                    // Delete all selected rows
+                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                     {
-                        PostgresHelper.Delete(item);
+                        var item = row.DataBoundItem as Item;
+                        if (item != null)
+                        {
+                            PostgresHelper.Delete(item);
+                        }
                     }
+                    MessageBox.Show("Delete item successfully.");
+                    ShowLoading();
+                    Cursor.Current = Cursors.Default;
+                    backgroundWorker1.RunWorkerAsync();
                 }
-                MessageBox.Show("Delete item successfully.");
-                Cursor.Current = Cursors.Default;
-                backgroundWorker1.RunWorkerAsync();
+                else
+                {
+                    HideLoading();
+                }
             }
             else
             {
@@ -174,19 +204,12 @@ namespace IT008_KeyTime
                     var items = (List<Item>)data;
                     List<MapItem> mapItem = new List<MapItem>();
 
-
                     foreach (var item in items)
                     {
                         mapItem.Add(new MapItem(item));
                     }
 
                     this.dataGridView1.DataSource = mapItem;
-                    //this.dataGridView1.Columns["id"].Visible = false;
-                    //this.dataGridView1.Columns["user_id"].Visible = false;
-                    //this.dataGridView1.Columns["item_id"].Visible = false;
-                    //this.dataGridView1.Columns["rental_start"].Visible = false;
-                    //this.dataGridView1.Columns["expect_return"].Visible = false;
-                    //this.dataGridView1.Columns["actual_return"].Visible = false;
                     this.dataGridView1.Columns["status"].Visible = false;
                 }
             }
@@ -220,7 +243,6 @@ namespace IT008_KeyTime
                 pictureBox1.Visible = true;
             }
         }
-
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             // Search
@@ -237,7 +259,34 @@ namespace IT008_KeyTime
             var items = PostgresHelper.GetAll<Item>();
             UpdateDataGridViewSource(items);
         }
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            this.Invoke(new Action(() =>
+            {
+                materialButton6.Enabled = false;
+                Cursor.Current = Cursors.WaitCursor;
+            }));
+            // Lấy tham số truyền vào từ RunWorkerAsync
+            string filePath = e.Argument as string;
 
+            // Thực hiện công việc với filePath ở đây
+            List<Item> items = ReadExcelFile(filePath);
+
+            foreach (var item in items)
+            {
+                PostgresHelper.Insert(item);
+            }
+
+            // Gọi hàm cập nhật UI nếu cần thiết
+            this.Invoke(new Action(() =>
+            {
+                //Cursor.Current = Cursors.Default;
+                //materialButton6.Enabled = true;
+                backgroundWorker1.RunWorkerAsync();
+                MessageBox.Show("Add new list successfully.");
+                clearForm();
+            }));
+        }
         private void Item_Load(object sender, EventArgs e)
         {
 
@@ -267,6 +316,108 @@ namespace IT008_KeyTime
                 }
                 materialButton3.Enabled = true;
             }
+        }
+
+        private void materialButton6_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                ShowLoading();
+                backgroundWorker2.RunWorkerAsync(filePath);
+            }
+        }
+        private List<Item> ReadExcelFile(string filePath)
+        {
+            List<Item> items = new List<Item>();
+
+            WorkBook workbook = WorkBook.Load(filePath);
+            WorkSheet worksheet = workbook.WorkSheets.First();
+
+            bool flag = false;
+            foreach (var row in worksheet.Rows)
+            {
+                if (flag == false)
+                {
+                    flag = true;        
+                    continue;
+                }
+
+                Item item = new Item();
+
+                item.name = row.Columns[1].ToString(); 
+                item.room = row.Columns[2].ToString();      
+                item.description = row.Columns[3].ToString();
+                
+                string Status = row.Columns[4].ToString();
+
+                switch (Status)
+                {
+                    case "IDLE":
+                        item.status = 0;
+                        break;
+                    case "IN USE":
+                        item.status = 1;
+                        break;
+                    case "BROKEN":
+                        item.status = 2;
+                        break;
+                    case "LOST":
+                        item.status = 3;
+                        break;
+                    default:
+                        item.status = -1;
+                        break;  
+                }
+
+
+                item.note = row.Columns[5].ToString();
+                items.Add(item);
+            }
+
+            workbook.Close();
+            return items;
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
+            this.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Close();
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void logoutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Show();
+        }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void changePasswordToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
+            this.Show();
         }
     }
 }

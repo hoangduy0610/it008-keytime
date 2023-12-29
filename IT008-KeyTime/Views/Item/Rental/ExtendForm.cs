@@ -23,8 +23,6 @@ namespace IT008_KeyTime
             textBox1.Text = item.id.ToString();
             dateTimePicker1.Value = item.expect_return;
         }
-
-
         private void materialButton1_Click(object sender, EventArgs e)
         {
             materialButton1.Enabled = false;
@@ -45,6 +43,23 @@ namespace IT008_KeyTime
                 MessageBox.Show("Extend failed");
                 this.Close();
             }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Show();
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
+            this.Show();
         }
     }
 }
