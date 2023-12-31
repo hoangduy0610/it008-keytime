@@ -54,12 +54,12 @@
             // materialLabel1
             // 
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.Location = new System.Drawing.Point(106, 114);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(238, 85);
+            this.materialLabel1.Size = new System.Drawing.Size(356, 85);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Name";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,12 +127,12 @@
             // materialLabel2
             // 
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel2.Location = new System.Drawing.Point(106, 273);
             this.materialLabel2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(238, 84);
+            this.materialLabel2.Size = new System.Drawing.Size(356, 84);
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Note";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,7 +169,7 @@
             this.materialLabel3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(242, 82);
+            this.materialLabel3.Size = new System.Drawing.Size(356, 82);
             this.materialLabel3.TabIndex = 6;
             this.materialLabel3.Text = "Assignee";
             this.materialLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,7 +192,7 @@
             this.materialLabel4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(239, 88);
+            this.materialLabel4.Size = new System.Drawing.Size(353, 88);
             this.materialLabel4.TabIndex = 8;
             this.materialLabel4.Text = "Deadline";
             this.materialLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,7 +200,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::IT008_KeyTime.Properties.Resources.Loading;
-            this.pictureBox1.Location = new System.Drawing.Point(375, 330);
+            this.pictureBox1.Location = new System.Drawing.Point(411, 335);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 235);
@@ -222,7 +222,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1117, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1117, 40);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -232,7 +232,7 @@
             this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(99, 44);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(99, 36);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // logoutToolStripMenuItem
@@ -254,7 +254,7 @@
             this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changePasswordToolStripMenuItem});
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(121, 44);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(121, 36);
             this.accountToolStripMenuItem.Text = "Account";
             // 
             // changePasswordToolStripMenuItem
@@ -267,7 +267,7 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(84, 44);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(84, 36);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // CreatePlan
