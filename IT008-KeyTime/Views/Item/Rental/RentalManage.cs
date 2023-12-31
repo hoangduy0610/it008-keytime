@@ -34,17 +34,10 @@ namespace IT008_KeyTime.Views.Item.Rental
                 }
                 else
                 {
-                    var rentals = (List<RentalItem>)data;
-                    List<MapRentalItem> mapRentalItems = new List<MapRentalItem>();
-
-
-                    foreach (var rental in rentals)
-                    {
-                        mapRentalItems.Add(new MapRentalItem(rental));
-                    }
-
-                    this.dataGridView1.DataSource = mapRentalItems;
+                    this.dataGridView1.DataSource = data;
                     this.dataGridView1.Columns["status"].Visible = false;
+                    this.dataGridView1.Columns["item_id"].Visible = false;
+                    this.dataGridView1.Columns["user_id"].Visible = false;
                 }
             }
             else
@@ -82,7 +75,17 @@ namespace IT008_KeyTime.Views.Item.Rental
         {
             // Load data from database
             var data = PostgresHelper.GetAll<RentalItem>();
-            UpdateDataGridViewSource(data);
+            var items = PostgresHelper.GetAll<Models.Item>();
+            var users = PostgresHelper.GetAll<User>();
+            // create MapRentalItem list with item name and username
+            List<MapRentalItem> mapRentalItems = new List<MapRentalItem>();
+            foreach (var rental in data)
+            {
+                var item = items.Find(x => x.id == rental.item_id);
+                var user = users.Find(x => x.id == rental.user_id);
+                mapRentalItems.Add(new MapRentalItem(rental, item.name, user.name));
+            }
+            UpdateDataGridViewSource(mapRentalItems);
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
