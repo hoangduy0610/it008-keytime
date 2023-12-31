@@ -38,6 +38,15 @@ namespace IT008_KeyTime.Views.Item.Inventory
                 else
                 {
                     this.dataGridView1.DataSource = data;
+                    foreach (DataGridViewColumn column in this.dataGridView1.Columns)
+                    {
+                        column.SortMode = DataGridViewColumnSortMode.Automatic;
+                        // hide id column
+                        if (column.Name == "status" || column.Name == "assignee_id")
+                        {
+                            column.Visible = false;
+                        }
+                    }
                 }
             }
             else
@@ -73,9 +82,16 @@ namespace IT008_KeyTime.Views.Item.Inventory
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            // fetch data from database and assign to dataGridView1.DataSource
-            var data = PostgresHelper.GetAll<InventoryPlan>();
-            UpdateDataGridViewSource(data);
+            // fetch data from database tbl_inventory_plans JOIN tbl_users ON tbl_inventory_plans.assignee_id = tbl_users.id
+            var inventoryPlans = PostgresHelper.GetAll<InventoryPlan>();
+            var users = PostgresHelper.GetAll<User>();
+            var inventoryPlanWithAssigneeName = new List<InventoryPlanWithAssigneeName>();
+            foreach (var inventoryPlan in inventoryPlans)
+            {
+                var assigneeName = users.Where(user => user.id == inventoryPlan.assignee_id).FirstOrDefault().name;
+                inventoryPlanWithAssigneeName.Add(new InventoryPlanWithAssigneeName(inventoryPlan, assigneeName));
+            }
+            UpdateDataGridViewSource(inventoryPlanWithAssigneeName);
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -95,7 +111,7 @@ namespace IT008_KeyTime.Views.Item.Inventory
         {
             // go  to CreatePlan form
             var createPlan = new CreatePlan();
-            Store._currentInventoryPlan = (InventoryPlan)dataGridView1.CurrentRow.DataBoundItem;
+            Store._currentInventoryPlan = (InventoryPlanWithAssigneeName)dataGridView1.CurrentRow.DataBoundItem;
             this.Hide();
             createPlan.ShowDialog();
             ShowLoading();
@@ -107,7 +123,7 @@ namespace IT008_KeyTime.Views.Item.Inventory
         {
             // go to AssignItem
             var assignItem = new AssignItem();
-            Store._currentInventoryPlan = (InventoryPlan)dataGridView1.CurrentRow.DataBoundItem;
+            Store._currentInventoryPlan = (InventoryPlanWithAssigneeName)dataGridView1.CurrentRow.DataBoundItem;
             this.Hide();
             assignItem.ShowDialog();
             ShowLoading();
@@ -128,7 +144,8 @@ namespace IT008_KeyTime.Views.Item.Inventory
             this.materialButton4.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
             ShowLoading();
-            var inventoryPlan = (InventoryPlan)dataGridView1.CurrentRow.DataBoundItem;
+            var inventoryPlanRender = (InventoryPlanWithAssigneeName)dataGridView1.CurrentRow.DataBoundItem;
+            var inventoryPlan = PostgresHelper.GetById<InventoryPlan>(inventoryPlanRender.id);
             if (inventoryPlan != null)
             {
                 inventoryPlan.status = (int) InventoryPlanStatus.INPROGRESS;
@@ -165,7 +182,7 @@ namespace IT008_KeyTime.Views.Item.Inventory
 
             // go to DoInventory form
             var doInventory = new DoInventory();
-            Store._currentInventoryPlan = (InventoryPlan)dataGridView1.CurrentRow.DataBoundItem;
+            Store._currentInventoryPlan = (InventoryPlanWithAssigneeName)dataGridView1.CurrentRow.DataBoundItem;
             this.Hide();
             doInventory.ShowDialog();
             ShowLoading();
@@ -179,7 +196,8 @@ namespace IT008_KeyTime.Views.Item.Inventory
             this.materialButton6.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
             ShowLoading();
-            var inventoryPlan = (InventoryPlan)dataGridView1.CurrentRow.DataBoundItem;
+            var inventoryPlanTemp = (InventoryPlanWithAssigneeName)dataGridView1.CurrentRow.DataBoundItem;
+            var inventoryPlan = PostgresHelper.GetById<InventoryPlan>(inventoryPlanTemp.id);
             if (inventoryPlan != null)
             {
                 var result = PostgresHelper.Delete(inventoryPlan);
@@ -209,7 +227,7 @@ namespace IT008_KeyTime.Views.Item.Inventory
             // enable or disable buttons if choose an InventoryPlan
             if (dataGridView1.SelectedRows.Count == 1)
             {
-                var inventoryPlan = (InventoryPlan)dataGridView1.CurrentRow.DataBoundItem;
+                var inventoryPlan = (InventoryPlanWithAssigneeName)dataGridView1.CurrentRow.DataBoundItem;
                 if (inventoryPlan != null)
                 {
                     materialButton2.Enabled = true;

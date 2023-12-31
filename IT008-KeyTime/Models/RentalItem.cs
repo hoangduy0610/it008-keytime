@@ -41,7 +41,9 @@ namespace IT008_KeyTime.Models
     public class MapRentalItem : RentalItem 
     {
         public string rental_status { get; set; }
-        public MapRentalItem(RentalItem rentalItem)
+        public string item_name { get; set; }
+        public string user_name { get; set; }
+        public MapRentalItem(RentalItem rentalItem, string item_name, string user_name)
         {
             this.id = rentalItem.id;
             this.user_id = rentalItem.user_id;
@@ -50,6 +52,8 @@ namespace IT008_KeyTime.Models
             this.expect_return = rentalItem.expect_return;
             this.actual_return = rentalItem.actual_return;
             this.rental_status = rentalItem.getRentalStatus();
+            this.item_name = item_name;
+            this.user_name = user_name;
             //this.roleString = Enum.GetName(typeof(Roles), user.role);
         }
     } 

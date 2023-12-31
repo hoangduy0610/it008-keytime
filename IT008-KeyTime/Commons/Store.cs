@@ -12,7 +12,7 @@ namespace IT008_KeyTime.Commons
         public static User _user;
         public static User _currentEditing;
         public static RentalItem _currentRentalItem;
-        public static InventoryPlan _currentInventoryPlan;
+        public static InventoryPlanWithAssigneeName _currentInventoryPlan;
         public static InventoryItem _currentInventoryItem;
     }
 }
