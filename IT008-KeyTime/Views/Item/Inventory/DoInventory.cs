@@ -127,7 +127,6 @@ namespace IT008_KeyTime.Views.Item.Inventory
                 materialButton2.Enabled = false;
             }
         }
-
         private void materialButton2_Click(object sender, EventArgs e)
         {
             // go to QRScan form
@@ -136,6 +135,25 @@ namespace IT008_KeyTime.Views.Item.Inventory
             qrScan.ShowDialog();
             ShowLoading();
             backgroundWorker1.RunWorkerAsync();
+            this.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
         }
     }

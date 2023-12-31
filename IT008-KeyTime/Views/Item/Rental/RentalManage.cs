@@ -1,6 +1,9 @@
-﻿using IT008_KeyTime.Commons;
+﻿using DocumentFormat.OpenXml.Office2010.CustomUI;
+using IT008_KeyTime.Commons;
 using IT008_KeyTime.Enums;
 using IT008_KeyTime.Models;
+
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +21,7 @@ namespace IT008_KeyTime.Views.Item.Rental
         public RentalManage()
         {
             InitializeComponent();
-            backgroundWorker1.RunWorkerAsync();
+            backgroundWorker1.RunWorkerAsync(); 
         }
 
         public void UpdateDataGridViewSource(object data)
@@ -31,7 +34,17 @@ namespace IT008_KeyTime.Views.Item.Rental
                 }
                 else
                 {
-                    this.dataGridView1.DataSource = data;
+                    var rentals = (List<RentalItem>)data;
+                    List<MapRentalItem> mapRentalItems = new List<MapRentalItem>();
+
+
+                    foreach (var rental in rentals)
+                    {
+                        mapRentalItems.Add(new MapRentalItem(rental));
+                    }
+
+                    this.dataGridView1.DataSource = mapRentalItems;
+                    this.dataGridView1.Columns["status"].Visible = false;
                 }
             }
             else
@@ -74,11 +87,24 @@ namespace IT008_KeyTime.Views.Item.Rental
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
+            User currentUser = IT008_KeyTime.Commons.Store._user;
+            if (currentUser.role == 4)
+            {
+                materialButton2.Enabled = false;
+                materialButton4.Enabled = false;
+            }
+
             materialButton2.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
             // update status of rental item to REJECTED
             if (dataGridView1.SelectedRows.Count > 0)
             {
+                if (currentUser.role == 4)
+                {
+                    materialButton2.Enabled = false;
+                    materialButton4.Enabled = false;
+                }
+
                 var selectedRows = dataGridView1.SelectedRows;
                 foreach (DataGridViewRow row in selectedRows)
                 {
@@ -87,6 +113,13 @@ namespace IT008_KeyTime.Views.Item.Rental
                     {
                         rental_item.status = (int) RentalStatusEnum.CANCELED;
                         PostgresHelper.Update(rental_item);
+
+                        int itemID = rental_item.item_id;
+                        var UpdateItemStatement = "SELECT * FROM tbl_items WHERE id ='" + itemID + "'";
+                        var itemInDB = PostgresHelper.QueryFirst<IT008_KeyTime.Models.Item>(UpdateItemStatement);
+
+                        itemInDB.status = 0;
+                        PostgresHelper.Update(itemInDB);
                     }
                 }
                 MessageBox.Show("Rejected rental item request.");
@@ -94,21 +127,38 @@ namespace IT008_KeyTime.Views.Item.Rental
                 Cursor.Current = Cursors.Default;
                 ShowLoading();
                 backgroundWorker1.RunWorkerAsync();
+
             }
             else
             {
                 MessageBox.Show("Please select at least one row");
                 HideLoading();
             }
+
+
+            
         }
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
+            User currentUser = IT008_KeyTime.Commons.Store._user;
+            if (currentUser.role == 4)
+            {
+                materialButton2.Enabled = false;
+                materialButton4.Enabled = false;
+            }
+
             materialButton4.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
             // update status of rental item to APPROVED
             if (dataGridView1.SelectedRows.Count > 0)
             {
+                if (currentUser.role == 4)
+                {
+                    materialButton2.Enabled = false;
+                    materialButton4.Enabled = false;
+                }
+
                 var selectedRows = dataGridView1.SelectedRows;
                 foreach (DataGridViewRow row in selectedRows)
                 {
@@ -151,6 +201,15 @@ namespace IT008_KeyTime.Views.Item.Rental
 
             if (dataGridView1.SelectedRows.Count == 1)
             {
+                User currentUser = IT008_KeyTime.Commons.Store._user;
+                if (currentUser.role == 4)
+                {
+                    materialButton2.Enabled = false;
+                    materialButton4.Enabled = false;
+
+                    return;
+                }
+
                 var selectedRow = dataGridView1.SelectedRows[0];
                 var rental_request = selectedRow.DataBoundItem as RentalItem;
 
@@ -230,6 +289,25 @@ namespace IT008_KeyTime.Views.Item.Rental
             {
                 MessageBox.Show("Please select one row");
             }
+        }
+
+        private void logoutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Show();
+        }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void changePasswordToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
+            this.Show();
         }
     }
 }

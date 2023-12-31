@@ -28,6 +28,7 @@ namespace IT008_KeyTime.Views.Item.Inventory
 
         public void UpdateDataGridViewSource(object data)
         {
+            Console.WriteLine(data);
             if (data != null)
             {
                 if (this.dataGridView1.InvokeRequired)
@@ -80,6 +81,8 @@ namespace IT008_KeyTime.Views.Item.Inventory
         private void materialButton1_Click(object sender, EventArgs e)
         {
             // go to CreatePlan form
+            Store._currentInventoryPlan = null;
+
             var createPlan = new CreatePlan();
             this.Hide();
             createPlan.ShowDialog();
@@ -114,6 +117,13 @@ namespace IT008_KeyTime.Views.Item.Inventory
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
+            User currentUser = IT008_KeyTime.Commons.Store._user;
+            if (currentUser.role > 2)
+            {
+                materialButton4.Enabled = false;
+                return;
+            }  
+
             // change status of InventoryPlan
             this.materialButton4.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
@@ -146,6 +156,13 @@ namespace IT008_KeyTime.Views.Item.Inventory
 
         private void materialButton5_Click(object sender, EventArgs e)
         {
+            User currentUser = IT008_KeyTime.Commons.Store._user;
+            if (currentUser.role == 4)
+            {
+                materialButton5.Enabled = false;   
+                return;
+            }
+
             // go to DoInventory form
             var doInventory = new DoInventory();
             Store._currentInventoryPlan = (InventoryPlan)dataGridView1.CurrentRow.DataBoundItem;
@@ -223,6 +240,25 @@ namespace IT008_KeyTime.Views.Item.Inventory
                 materialButton5.Enabled = false;
                 materialButton6.Enabled = false;
             }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();    
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
+            this.Show();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using IT008_KeyTime.Commons;
 using IT008_KeyTime.Enums;
+using IT008_KeyTime.Models;
 using IT008_KeyTime.Views.Item.Inventory;
 using IT008_KeyTime.Views.Item.Rental;
 using System;
@@ -33,21 +34,19 @@ namespace IT008_KeyTime.Views
         {
 
         }
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Close();
+        }
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            ManageItem form = new ManageItem();
             this.Hide();
-            form.ShowDialog();
+            new ManageItem().ShowDialog();
             this.Show();
-        }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Loginform form = new Loginform();
-            this.Hide();
-            form.ShowDialog();
-            this.Close();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,7 +66,7 @@ namespace IT008_KeyTime.Views
                 case (int) Roles.InventoryManager:
                     materialButton1.Enabled = false;
                     materialButton2.Enabled = false;
-                    materialButton4.Enabled = false;
+                    materialButton3.Enabled = true;
                     break;
                 case (int) Roles.User:
                     materialButton1.Enabled = false;
@@ -91,6 +90,13 @@ namespace IT008_KeyTime.Views
             var inventory = new Inventory();
             this.Hide();
             inventory.ShowDialog();
+            this.Show();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
         }
     }

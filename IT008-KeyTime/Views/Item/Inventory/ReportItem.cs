@@ -28,5 +28,22 @@ namespace IT008_KeyTime.Views.Item.Inventory
             inventoryItem.note = this.materialMultiLineTextBox1.Text;
             PostgresHelper.Update(inventoryItem);
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
+            this.Show();
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();       
+        }
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
+            this.Show();
+        }
     }
 }
