@@ -1942,12 +1942,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A12E6324E4348137C8586762A3CB5DF9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A01060EEA4C043D5965EAF9184549AD7"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3049,6 +3043,12 @@
         "OwnerKey" = "8:_B13A3BAC5FF478D22F59BB7B23164EF6"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A12E6324E4348137C8586762A3CB5DF9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -3067,6 +3067,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -3083,6 +3091,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -9119,7 +9135,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:KeyTimeInstaller"
+        "ProductName" = "8:KeyTime"
         "ProductCode" = "8:{77784310-B6EF-41C3-B5F7-B04032C1B2C3}"
         "PackageCode" = "8:{8826AD46-7CF5-4131-B69A-AC99C1529044}"
         "UpgradeCode" = "8:{C9C0193A-4470-4DD0-AECF-46D20E0AF928}"
@@ -9132,7 +9148,7 @@
         "Manufacturer" = "8:MEG Team"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:KeyTimeInstaller"
+        "Title" = "8:KeyTime"
         "Subject" = "8:"
         "ARPCONTACT" = "8:MEG Team"
         "Keywords" = "8:"
@@ -9670,7 +9686,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A01060EEA4C043D5965EAF9184549AD7"
             {
-            "SourcePath" = "8:..\\IT008-KeyTime\\obj\\Debug\\IT008-KeyTime.exe"
+            "SourcePath" = "8:..\\IT008-KeyTime\\obj\\Release\\IT008-KeyTime.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EF045C7EA6F842D1A49013054C5657A7"

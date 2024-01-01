@@ -274,6 +274,7 @@ namespace IT008_KeyTime
 
             foreach (var item in items)
             {
+                Console.WriteLine(item.name);
                 PostgresHelper.Insert(item);
             }
 
