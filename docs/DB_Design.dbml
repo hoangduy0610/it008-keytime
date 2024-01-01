@@ -1,0 +1,52 @@
+Table tbl_users {
+  id integer [pk, increment]
+  username varchar(255) [not null]
+  password varchar(255) [not null]
+  name varchar(255)
+  email varchar(255)
+  phone varchar(255)
+  address varchar(255)
+  role smallint [default: 4, not null]
+}
+
+Table tbl_items {
+  id integer [pk, increment]
+  name varchar [not null]
+  status smallint [default: 0]
+  room varchar
+  description varchar
+  note varchar
+}
+
+Table tbl_inventory_plans {
+  id integer [pk, increment]
+  name varchar [not null]
+  note text
+  assignee_id integer [default: 0, not null]
+  status smallint [default: 0, not null]
+  deadline datetime [default: `now()`, not null]
+}
+
+Table rls_rental_items {
+  id integer [pk, increment]
+  user_id integer [not null]
+  item_id integer [not null]
+  rental_start datetime [default: `now()`, not null]
+  expect_return datetime
+  actual_return datetime
+  status smallint [default: 0, not null]
+}
+
+Table rls_inventory_items {
+  id integer [pk]
+  inventory_plan_id integer [not null]
+  item_id integer [not null]
+  note text
+  status smallint [not null]
+}
+
+Ref: tbl_inventory_plans.assignee_id > tbl_users.id
+Ref: rls_inventory_items.inventory_plan_id > tbl_inventory_plans.id
+Ref: rls_inventory_items.item_id > tbl_items.id
+Ref: rls_rental_items.item_id > tbl_items.id
+Ref: rls_rental_items.user_id > tbl_users.id
