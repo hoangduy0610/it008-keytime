@@ -205,3 +205,4 @@ $RECYCLE.BIN/
 
 .vs/
 IT008-KeyTime/.vs/
+!KeyTimeInstaller/**
