@@ -53,13 +53,17 @@ namespace IT008_KeyTime
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            IT008_KeyTime.Commons.MenuStripUtils.ExitCurForm(this);
         }
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
+        }
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IT008_KeyTime.Commons.MenuStripUtils.Help();
         }
     }
 }

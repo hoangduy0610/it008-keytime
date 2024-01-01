@@ -36,19 +36,12 @@ namespace IT008_KeyTime.Views.Forgotpassword
         }
         private void CheckLoginButtonEnable()
         {
-            if (!string.IsNullOrWhiteSpace(textBox1.Text) && !string.IsNullOrWhiteSpace(textBox2.Text))
+            if (!string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 button1.Enabled = true;
                 return;
             }
             button1.Enabled = false;
-        }
-        static bool IsEmailValid(string email)
-        {
-            // Biểu thức chính quy để kiểm tra định dạng email
-            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$";
-            // Kiểm tra sự khớp giữa địa chỉ email và biểu thức chính quy
-            return Regex.IsMatch(email, pattern);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,14 +49,13 @@ namespace IT008_KeyTime.Views.Forgotpassword
             this.Cursor = Cursors.WaitCursor;
 
             string USERNAME = textBox1.Text;
-            string EMAIL = textBox2.Text;
-
             var statement = "SELECT * FROM tbl_users WHERE username ='" + USERNAME + "'";
 
             Console.WriteLine(statement);
             Console.WriteLine(USERNAME);
 
             var user = PostgresHelper.QueryFirst<User>(statement);
+            string EMAIL = user.email;
             if (user is null)
             {
                 MessageBox.Show("Username isn't valid.");
@@ -76,12 +68,6 @@ namespace IT008_KeyTime.Views.Forgotpassword
                 this.Close();
                 return;
             }
-            if (!IsEmailValid(EMAIL))
-            {
-                MessageBox.Show("Invalid email.");
-                return; 
-            }
-            
 
             string newPassword = GenerateRandomPassword(8, 14);
             string subject = "Reset password (IT008 - KeyTime)";

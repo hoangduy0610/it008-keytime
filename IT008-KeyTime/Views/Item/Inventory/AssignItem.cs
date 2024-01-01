@@ -188,13 +188,13 @@ namespace IT008_KeyTime.Views.Item.Inventory
             }
         }
 
+
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
         }
-
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -203,12 +203,15 @@ namespace IT008_KeyTime.Views.Item.Inventory
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            IT008_KeyTime.Commons.MenuStripUtils.ExitCurForm(this);
         }
-
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            IT008_KeyTime.Commons.MenuStripUtils.ExitCurForm(this);
+        }
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IT008_KeyTime.Commons.MenuStripUtils.Help();        
         }
     }
 }

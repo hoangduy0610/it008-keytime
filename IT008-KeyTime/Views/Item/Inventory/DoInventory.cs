@@ -31,7 +31,18 @@ namespace IT008_KeyTime.Views.Item.Inventory
                 }
                 else
                 {
-                    this.dataGridView1.DataSource = data;
+                  
+                    var inventoryItems = (List<InventoryItem>)data;
+                    List<InventoryItemWithItem> mapInventoryItems = new List<InventoryItemWithItem>();
+
+                    foreach (var inventoryItem in inventoryItems)
+                    {
+                        mapInventoryItems.Add(new InventoryItemWithItem(inventoryItem));
+                    }
+
+                    this.dataGridView1.DataSource = mapInventoryItems;
+                    this.dataGridView1.Columns["status"].Visible = false;
+                    this.dataGridView1.Columns["role"].Visible = false;
                 }
             }
             else
@@ -144,17 +155,19 @@ namespace IT008_KeyTime.Views.Item.Inventory
             IT008_KeyTime.Commons.MenuStripUtils.LogOut();
             this.Show();
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            IT008_KeyTime.Commons.MenuStripUtils.ExitCurForm(this);
         }
-
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
+        }
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IT008_KeyTime.Commons.MenuStripUtils.Help();
         }
     }
 }
