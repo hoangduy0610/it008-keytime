@@ -16,14 +16,40 @@ namespace IT008_KeyTime.Models
         public int item_id { get; set; }
         public string note { get; set; }
         public int status { get; set; }
+        public string getInventoryItemStatus()
+        {
+            switch (status)
+            {
+                case 0:
+                    return "Idle";
+                case 1:
+                    return "In use";
+                case 2:
+                    return "Broken";
+                case 3:
+                    return "Lost";
+                default:
+                    return "Unknown";
+            }
+        }
     }
 
-    public class InventoryItemWithItem
+    public class InventoryItemWithItem : InventoryItem
     {
         public int inventory_plan_id { get; set; }
         public int item_id { get; set; }
         public string name { get; set; }
         public string note { get; set; }
         public int status { get; set; }
+        public string inventoryStatus { get; set; }
+
+        public InventoryItemWithItem(InventoryItem inventoryItem)
+        {
+            this.inventory_plan_id = inventoryItem.inventory_plan_id;
+            this.item_id = inventoryItem.item_id;
+            //this.name = inventoryItem.name;
+            this.inventoryStatus = inventoryItem.getInventoryItemStatus();       
+            this.note = inventoryItem.note;
+        }
     }
 }

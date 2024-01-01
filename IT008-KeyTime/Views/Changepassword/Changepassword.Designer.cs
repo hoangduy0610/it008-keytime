@@ -53,7 +53,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBox1.Location = new System.Drawing.Point(104, 106);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -76,7 +76,7 @@
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBox2.Location = new System.Drawing.Point(104, 255);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -112,7 +112,7 @@
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.LavenderBlush;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBox3.Location = new System.Drawing.Point(104, 411);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
