@@ -42,6 +42,9 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
+      <a href="#our-team">Our Team</a>
+    </li>
+    <li>
       <a href="#about-the-project">About The Project</a>
     </li>
     <li>
@@ -59,12 +62,17 @@
   </ol>
 </details>
 
-
+## Our Team
+- Leader: Nguyen Hoang Duy - 22520328 - [Github](https://github.com/hoangduy0610)
+- Architect Consultant: Nguyen Ngoc Minh Quoc - 22521214 - [Github](https://github.com/gundamdouble00)
+- Member: Hoang Ho Quoc Bao - 22520102
+- Member: Tran Duc Chinh - 22520158
+- **Supervisor: Nguyen Tan Toan**
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/hoangduy0610/it008-keytime)
 
 KeyTime is an equipment management software designed to help companies track, organize and manage their equipment inventory efficiently.
 
@@ -81,9 +89,10 @@ KeyTime is an equipment management software designed to help companies track, or
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You can run directly by install the application through this .msi file: [Download]()
+You can run directly by download Installer folder [Download](https://drive.google.com/drive/u/0/folders/1MANHbuTq0yITHgIInUptsoruKx4zLDJw) and then install by running `setup.ext`
 
 Or to get a local copy up, please running follow these simple example steps below.
+Video instructions: [Youtube](https://youtu.be/F4ojfJApslM)
 
 ### Prerequisites
 
@@ -155,7 +164,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 Nguyen Hoang Duy (PO) - [@hoangduy0610](https://github.com/hoangduy0610) - hoangduy06104@gmail.com
 
-Nguyen Ngoc Minh Quoc (Technical Leading) - [@hoangduy0610](https://github.com/hoangduy0610) - hoangduy06104@gmail.com
+Nguyen Ngoc Minh Quoc (Technical Leading) - [@gundamdouble00](https://github.com/gundamdouble00)
 
 Project Link: [https://github.com/hoangduy0610/it008-keytime](https://github.com/hoangduy0610/it008-keytime)
 
