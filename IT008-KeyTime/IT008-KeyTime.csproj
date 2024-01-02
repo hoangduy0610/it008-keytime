@@ -383,6 +383,7 @@
   <ItemGroup>
     <Compile Include="Commons\Bcrypt.cs" />
     <Compile Include="Commons\Constants.cs" />
+    <Compile Include="Commons\Ini.cs" />
     <Compile Include="Commons\MenuStripUtils.cs" />
     <Compile Include="Commons\Store.cs" />
     <Compile Include="Enums\InventoryPlanStatus.cs" />

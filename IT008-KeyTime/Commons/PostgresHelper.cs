@@ -14,7 +14,7 @@ namespace IT008_KeyTime.Commons
     {
         public static List<T> Query<T>(string statement) where T : class
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(Constants.PostgresConnection);
+            var dataSourceBuilder = new NpgsqlDataSourceBuilder(new Constants().PostgresConnection);
             var dataSource = dataSourceBuilder.Build();
 
             using (var connection = dataSource.OpenConnection())
@@ -34,7 +34,7 @@ namespace IT008_KeyTime.Commons
 
         public static T QueryFirst<T>(string statement) where T : class
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(Constants.PostgresConnection);
+            var dataSourceBuilder = new NpgsqlDataSourceBuilder(new Constants().PostgresConnection);
             var dataSource = dataSourceBuilder.Build();
 
             using (var connection = dataSource.OpenConnection())
@@ -54,7 +54,7 @@ namespace IT008_KeyTime.Commons
 
         public static T GetById<T>(int id) where T : class
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(Constants.PostgresConnection);
+            var dataSourceBuilder = new NpgsqlDataSourceBuilder(new Constants().PostgresConnection);
             var dataSource = dataSourceBuilder.Build();
 
             using (var connection = dataSource.OpenConnection())
@@ -74,7 +74,7 @@ namespace IT008_KeyTime.Commons
 
         public static List<T> GetAll<T>() where T : class
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(Constants.PostgresConnection);
+            var dataSourceBuilder = new NpgsqlDataSourceBuilder(new Constants().PostgresConnection);
             var dataSource = dataSourceBuilder.Build();
 
             using (var connection = dataSource.OpenConnection())
@@ -94,7 +94,7 @@ namespace IT008_KeyTime.Commons
 
         public static long Insert<T>(T entityToInsert) where T : class
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(Constants.PostgresConnection);
+            var dataSourceBuilder = new NpgsqlDataSourceBuilder(new Constants().PostgresConnection);
             var dataSource = dataSourceBuilder.Build();
 
             using (var connection = dataSource.OpenConnection())
@@ -115,7 +115,7 @@ namespace IT008_KeyTime.Commons
 
         public static bool Update<T>(T entityToUpdate) where T : class
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(Constants.PostgresConnection);
+            var dataSourceBuilder = new NpgsqlDataSourceBuilder(new Constants().PostgresConnection);
             var dataSource = dataSourceBuilder.Build();
 
             using (var connection = dataSource.OpenConnection())
@@ -136,7 +136,7 @@ namespace IT008_KeyTime.Commons
 
         public static bool Delete<T>(T entityToDelete) where T : class
         {
-            var dataSourceBuilder = new NpgsqlDataSourceBuilder(Constants.PostgresConnection);
+            var dataSourceBuilder = new NpgsqlDataSourceBuilder(new Constants().PostgresConnection);
             var dataSource = dataSourceBuilder.Build();
 
             using (var connection = dataSource.OpenConnection())
