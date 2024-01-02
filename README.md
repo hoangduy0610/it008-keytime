@@ -89,7 +89,11 @@ KeyTime is an equipment management software designed to help companies track, or
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You can run directly by download Installer folder [Download](https://drive.google.com/drive/u/0/folders/1MANHbuTq0yITHgIInUptsoruKx4zLDJw) and then install by running `setup.ext`
+You can run directly by download Installer folder [Download](https://drive.google.com/drive/u/0/folders/1MANHbuTq0yITHgIInUptsoruKx4zLDJw) and then install by running `setup.exe`
+If you want to run local database:
+1. Create new database (can use pgsql command prompt or PgAdmin/DBeaver)
+2. Restore `db.sql` to the database created in step 2.
+3. Edit DB config in `config.ini`
 
 Or to get a local copy up, please running follow these simple example steps below.
 Video instructions: [Youtube](https://youtu.be/F4ojfJApslM)
@@ -109,7 +113,7 @@ You need to install Visual Studio and PostgreSQL first.
    ```
 2. Create new database (can use pgsql command prompt or PgAdmin/DBeaver)
 3. Restore `db.sql` to the database created in step 2.
-4. Edit DB config in `Commons/Constants.cs`
+4. Edit DB config in `config.ini`
 5. Open the IT008-KeyTime.sln file by Visual Studio.
 6. Press the "Run" button.
 
