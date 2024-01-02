@@ -1731,6 +1731,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D577E36CFD484039BA80CF25D3A2231F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D5C9081770C74752D4C4DB78347E2875"
         "OwnerKey" = "8:_A01060EEA4C043D5965EAF9184549AD7"
         "MsmSig" = "8:_UNDEFINED"
@@ -3074,6 +3080,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -3098,6 +3112,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -8263,6 +8285,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D577E36CFD484039BA80CF25D3A2231F"
+            {
+            "SourcePath" = "8:..\\IT008-KeyTime\\config.ini"
+            "TargetName" = "8:config.ini"
+            "Tag" = "8:"
+            "Folder" = "8:_EF045C7EA6F842D1A49013054C5657A7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D5C9081770C74752D4C4DB78347E2875"
             {
             "AssemblyRegister" = "3:1"
@@ -9137,7 +9179,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KeyTime"
         "ProductCode" = "8:{77784310-B6EF-41C3-B5F7-B04032C1B2C3}"
-        "PackageCode" = "8:{8826AD46-7CF5-4131-B69A-AC99C1529044}"
+        "PackageCode" = "8:{F32A1C9D-6CEC-4CAB-A5BE-6081999004BD}"
         "UpgradeCode" = "8:{C9C0193A-4470-4DD0-AECF-46D20E0AF928}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
