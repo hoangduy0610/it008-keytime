@@ -347,14 +347,32 @@ namespace IT008_KeyTime
                 }
 
                 Item item = new Item();
-                item.name = row.Cells[1].Value.ToString();
-                item.room = row.Cells[2].Value.ToString();
-                item.description = row.Cells[3].Value.ToString();
-                string Status = row.Cells[4].Value.ToString();
-                item.status = 0;
+                item.name = row.Cells[2].Value.ToString();
+                item.room = row.Cells[3].Value.ToString();
+                item.description = row.Cells[4].Value.ToString();
+                string Status = row.Cells[5].Value.ToString();
+                // switch case status from string to int
+                switch (Status)
+                {
+                    case "IDLE":
+                        item.status = 0;
+                        break;
+                    case "IN USE":
+                        item.status = 1;
+                        break;
+                    case "BROKEN":
+                        item.status = 2;
+                        break;
+                    case "LOST":
+                        item.status = 3;
+                        break;
+                    default:
+                        item.status = 0;
+                        break;
+                }
 
                 Console.WriteLine(Status, item.status);
-                item.note = row.Cells[5].Value.ToString();
+                item.note = row.Cells[6].Value.ToString();
                 items.Add(item);
             }
 
