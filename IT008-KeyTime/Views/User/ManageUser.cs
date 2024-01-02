@@ -147,7 +147,8 @@ namespace IT008_KeyTime.Views
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
-                var user = selectedRow.DataBoundItem as User;
+                var mapuser = selectedRow.DataBoundItem as MapUser;
+                var user = PostgresHelper.GetById<User>(mapuser.id);
                 if (user != null)
                 {
                     Store._currentEditing = user;

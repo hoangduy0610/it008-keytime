@@ -203,4 +203,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/hoangduy0610/it008-keytime/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hoangduy06104
-[product-screenshot]: assets/screenshot.png
+[product-screenshot]: assets/DemoFlows.gif

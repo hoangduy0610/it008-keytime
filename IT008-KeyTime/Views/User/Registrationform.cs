@@ -24,7 +24,8 @@ namespace IT008_KeyTime
             {
                 materialButton1.Text = "Update";
                 materialTextBox1.Text = Store._currentEditing.username;
-                materialTextBox2.Text = Store._currentEditing.password;
+                materialTextBox2.Text = "********";
+                materialTextBox2.ReadOnly = true;
                 materialTextBox3.Text = Store._currentEditing.email;
                 materialTextBox4.Text = Store._currentEditing.name;
                 materialTextBox5.Text = Store._currentEditing.address;
@@ -127,8 +128,8 @@ namespace IT008_KeyTime
                 // Update User
                 Store._currentEditing.username = username;
 
-                string hashedPassword = IT008_KeyTime.Commons.Bcrypt.CreateMD5(password);
-                Store._currentEditing.password = hashedPassword;
+                //string hashedPassword = IT008_KeyTime.Commons.Bcrypt.CreateMD5(password);
+                //Store._currentEditing.password = hashedPassword;
 
                 Store._currentEditing.name = name;
                 Store._currentEditing.email = email;
