@@ -21,17 +21,33 @@ namespace IT008_KeyTime.Views.Item.Inventory
             backgroundWorker1.RunWorkerAsync();
         }
 
-        public void UpdateDataGridViewSource(object data)
+        public void UpdateDataGridViewSource(object data, object data2)
         {
             if (data != null)
             {
                 if (this.dataGridView1.InvokeRequired)
                 {
-                    this.dataGridView1.Invoke(new Action(() => UpdateDataGridViewSource(data)));
+                    this.dataGridView1.Invoke(new Action(() => UpdateDataGridViewSource(data, data2)));
                 }
                 else
                 {
-                    this.dataGridView1.DataSource = data;
+                  
+                    var inventoryItems = (List<Models.Item>)data;
+                    var inventoryItems2 = (List<Models.InventoryItem>)data2;
+                    List<MapItem> mapInventoryItems = new List<MapItem>();
+
+                    foreach (var inventoryItem in inventoryItems)
+                    {
+                        // find inventory item with item id
+                        var inventoryItem2 = inventoryItems2.Find(x => x.item_id == inventoryItem.id);
+                        if (inventoryItem2 != null)
+                        {
+                            mapInventoryItems.Add(new MapItem(inventoryItem, inventoryItem2, true));
+                        }
+                    }
+
+                    this.dataGridView1.DataSource = mapInventoryItems;
+                    this.dataGridView1.Columns["status"].Visible = false;
                 }
             }
             else
@@ -68,9 +84,12 @@ namespace IT008_KeyTime.Views.Item.Inventory
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             // load data from database based on store current inventory plan id
-            var statement = $"SELECT * FROM tbl_items JOIN rls_inventory_items ON tbl_items.id = rls_inventory_items.item_id WHERE rls_inventory_items.inventory_plan_id = {Store._currentInventoryPlan.id}";
-            var data = PostgresHelper.Query<InventoryItemWithItem>(statement);
-            UpdateDataGridViewSource(data);
+            Console.WriteLine(Store._currentInventoryPlan.id);
+            var statement = $"SELECT tbl_items.* FROM tbl_items JOIN rls_inventory_items ON tbl_items.id = rls_inventory_items.item_id WHERE rls_inventory_items.inventory_plan_id = {Store._currentInventoryPlan.id}";
+            var data = PostgresHelper.Query<Models.Item>(statement);
+            var statement2 = $"SELECT * FROM rls_inventory_items WHERE inventory_plan_id = {Store._currentInventoryPlan.id}";
+            var data2 = PostgresHelper.Query<Models.InventoryItem>(statement2);
+            UpdateDataGridViewSource(data, data2);
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -79,12 +98,16 @@ namespace IT008_KeyTime.Views.Item.Inventory
             ShowLoading();
             this.materialButton1.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
-            var statement = $"SELECT * FROM rls_inventory_items WHERE inventory_plan_id = {Store._currentInventoryPlan.id} AND item_id = {(dataGridView1.SelectedRows[0].DataBoundItem as Models.InventoryItemWithItem).item_id}";
+            Console.WriteLine(Store._currentInventoryPlan.id);
+            var statement = $"SELECT * FROM rls_inventory_items WHERE inventory_plan_id = {Store._currentInventoryPlan.id} AND item_id = {(dataGridView1.SelectedRows[0].DataBoundItem as MapItem).id}";
             var data = PostgresHelper.Query<InventoryItem>(statement).FirstOrDefault();
+            //Console.WriteLine(data.id);
+            Console.WriteLine(statement);
             Store._currentInventoryItem = data;
             var reportItem = new ReportItem();
             this.Hide();
             reportItem.ShowDialog();
+            backgroundWorker1.RunWorkerAsync();
             HideLoading();
             this.materialButton1.Enabled = true;
             Cursor.Current = Cursors.Default;
@@ -144,17 +167,19 @@ namespace IT008_KeyTime.Views.Item.Inventory
             IT008_KeyTime.Commons.MenuStripUtils.LogOut();
             this.Show();
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            IT008_KeyTime.Commons.MenuStripUtils.ExitCurForm(this);
         }
-
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
+        }
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IT008_KeyTime.Commons.MenuStripUtils.Help();
         }
     }
 }

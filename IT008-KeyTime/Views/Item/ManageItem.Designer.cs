@@ -59,6 +59,7 @@
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -96,7 +97,7 @@
             this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox1.LeadingIcon = null;
             this.materialTextBox1.Location = new System.Drawing.Point(154, 123);
-            this.materialTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox1.MaxLength = 50;
             this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox1.Multiline = false;
@@ -114,8 +115,8 @@
             this.materialTextBox2.Depth = 0;
             this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(154, 174);
-            this.materialTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialTextBox2.Location = new System.Drawing.Point(154, 175);
+            this.materialTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox2.MaxLength = 50;
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox2.Multiline = false;
@@ -133,7 +134,7 @@
             this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox3.LeadingIcon = null;
             this.materialTextBox3.Location = new System.Drawing.Point(154, 227);
-            this.materialTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialTextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox3.MaxLength = 50;
             this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox3.Multiline = false;
@@ -150,8 +151,8 @@
             this.materialTextBox4.Depth = 0;
             this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox4.LeadingIcon = null;
-            this.materialTextBox4.Location = new System.Drawing.Point(154, 277);
-            this.materialTextBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialTextBox4.Location = new System.Drawing.Point(154, 279);
+            this.materialTextBox4.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox4.MaxLength = 50;
             this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox4.Multiline = false;
@@ -246,7 +247,7 @@
             this.materialButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton5.HighEmphasis = true;
             this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(765, 60);
+            this.materialButton5.Location = new System.Drawing.Point(730, 70);
             this.materialButton5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton5.Name = "materialButton5";
@@ -273,8 +274,8 @@
             this.materialMaskedTextBox2.HideSelection = true;
             this.materialMaskedTextBox2.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.materialMaskedTextBox2.LeadingIcon = null;
-            this.materialMaskedTextBox2.Location = new System.Drawing.Point(445, 66);
-            this.materialMaskedTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialMaskedTextBox2.Location = new System.Drawing.Point(438, 66);
+            this.materialMaskedTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.materialMaskedTextBox2.Mask = "";
             this.materialMaskedTextBox2.MaxLength = 32767;
             this.materialMaskedTextBox2.MouseState = MaterialSkin.MouseState.OUT;
@@ -335,11 +336,11 @@
             "IN USE",
             "BROKEN",
             "LOST"});
-            this.materialComboBox1.Location = new System.Drawing.Point(154, 329);
+            this.materialComboBox1.Location = new System.Drawing.Point(154, 331);
             this.materialComboBox1.MaxDropDownItems = 4;
             this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(199, 49);
+            this.materialComboBox1.Size = new System.Drawing.Size(197, 49);
             this.materialComboBox1.StartIndex = 0;
             this.materialComboBox1.TabIndex = 29;
             // 
@@ -350,10 +351,10 @@
             this.materialMultiLineTextBox1.Depth = 0;
             this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(33, 413);
+            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(33, 417);
             this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(318, 224);
+            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(318, 220);
             this.materialMultiLineTextBox1.TabIndex = 30;
             this.materialMultiLineTextBox1.Text = "";
             // 
@@ -378,7 +379,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Pink;
-            this.label1.Location = new System.Drawing.Point(30, 181);
+            this.label1.Location = new System.Drawing.Point(30, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 18);
             this.label1.TabIndex = 32;
@@ -390,7 +391,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Pink;
-            this.label2.Location = new System.Drawing.Point(30, 130);
+            this.label2.Location = new System.Drawing.Point(30, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 18);
             this.label2.TabIndex = 33;
@@ -402,7 +403,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Pink;
-            this.label3.Location = new System.Drawing.Point(442, 45);
+            this.label3.Location = new System.Drawing.Point(434, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 18);
             this.label3.TabIndex = 34;
@@ -414,7 +415,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Pink;
-            this.label4.Location = new System.Drawing.Point(30, 284);
+            this.label4.Location = new System.Drawing.Point(30, 295);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 18);
             this.label4.TabIndex = 35;
@@ -426,7 +427,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Pink;
-            this.label5.Location = new System.Drawing.Point(30, 234);
+            this.label5.Location = new System.Drawing.Point(30, 243);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 18);
             this.label5.TabIndex = 36;
@@ -438,7 +439,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Pink;
-            this.label6.Location = new System.Drawing.Point(30, 336);
+            this.label6.Location = new System.Drawing.Point(30, 346);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 18);
             this.label6.TabIndex = 37;
@@ -450,7 +451,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Pink;
-            this.label7.Location = new System.Drawing.Point(30, 386);
+            this.label7.Location = new System.Drawing.Point(30, 396);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 18);
             this.label7.TabIndex = 38;
@@ -466,7 +467,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1226, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1215, 24);
             this.menuStrip1.TabIndex = 39;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -513,6 +514,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // materialButton6
             // 
@@ -531,11 +533,15 @@
             this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton6.Size = new System.Drawing.Size(91, 36);
             this.materialButton6.TabIndex = 40;
-            this.materialButton6.Text = "Add File";
+            this.materialButton6.Text = "Import";
             this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton6.UseAccentColor = false;
             this.materialButton6.UseVisualStyleBackColor = true;
             this.materialButton6.Click += new System.EventHandler(this.materialButton6_Click);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             // 
             // ManageItem
             // 
@@ -543,7 +549,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::IT008_KeyTime.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1226, 677);
+            this.ClientSize = new System.Drawing.Size(1215, 685);
             this.Controls.Add(this.materialButton6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -569,7 +575,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManageItem";
             this.Text = "Item";
             this.Load += new System.EventHandler(this.Item_Load);
@@ -613,6 +619,7 @@
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
 

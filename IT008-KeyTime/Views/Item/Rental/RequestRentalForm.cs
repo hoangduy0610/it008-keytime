@@ -133,6 +133,7 @@ namespace IT008_KeyTime
 
             PostgresHelper.Insert(rentalItem);
             MessageBox.Show("Request success");
+            backgroundWorker1.RunWorkerAsync();
             materialButton1.Enabled = true;
             Cursor.Current = Cursors.Default;
             clearForm();
@@ -189,17 +190,19 @@ namespace IT008_KeyTime
             IT008_KeyTime.Commons.MenuStripUtils.LogOut();
             this.Show();
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();       
+            IT008_KeyTime.Commons.MenuStripUtils.ExitCurForm(this);
         }
-
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
+        }
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IT008_KeyTime.Commons.MenuStripUtils.Help();
         }
     }
 }

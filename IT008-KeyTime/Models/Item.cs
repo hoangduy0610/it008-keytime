@@ -34,11 +34,27 @@ namespace IT008_KeyTime.Models
                     return "Unknown";
             }
         }
+
+        
     }
 
     public class MapItem : Item 
     {
         public string item_status { get; set; }
+        public string GetInventoryStatusString(int status)
+        {
+            switch (status)
+            {
+                case 0:
+                    return "NORMAL";
+                case 1:
+                    return "BROKEN";
+                case 2:
+                    return "LOST";
+                default:
+                    return "Unknown";
+            }
+        }
         public MapItem(Item item)
         {
             this.id = item.id;
@@ -47,6 +63,16 @@ namespace IT008_KeyTime.Models
             this.description = item.description;
             this.item_status = item.GetItemString();
             this.note = item.note;
+        }
+        public MapItem(Item item, InventoryItem iitem, bool isInventory)
+        {
+            this.id = item.id;
+            this.name = item.name;
+            this.room = item.room;
+            this.description = item.description;
+            this.status = iitem.status;
+            this.item_status = (isInventory ? GetInventoryStatusString(iitem.status) :item.GetItemString());
+            this.note = iitem.note;
         }
     }
 }

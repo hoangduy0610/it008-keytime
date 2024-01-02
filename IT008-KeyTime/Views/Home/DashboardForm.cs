@@ -48,12 +48,6 @@ namespace IT008_KeyTime.Views
             new ManageItem().ShowDialog();
             this.Show();
         }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void DashboardForm_Load(object sender, EventArgs e)
         {
             switch(Store._user.role)
@@ -98,6 +92,15 @@ namespace IT008_KeyTime.Views
             this.Hide();
             IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IT008_KeyTime.Commons.MenuStripUtils.Help();
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IT008_KeyTime.Commons.MenuStripUtils.ExitCurForm(this);
         }
     }
 }

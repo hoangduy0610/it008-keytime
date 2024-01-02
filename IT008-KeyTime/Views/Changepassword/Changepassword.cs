@@ -60,7 +60,7 @@ namespace IT008_KeyTime.Views.Changepassword
             }
 
             string oldHashed = IT008_KeyTime.Commons.Bcrypt.CreateMD5(OLDPASSWORD);
-            string curUserPassword = IT008_KeyTime.Commons.Bcrypt.CreateMD5(currentUser.password);
+            string curUserPassword = (currentUser.password);
 
             if (oldHashed != curUserPassword) 
             {

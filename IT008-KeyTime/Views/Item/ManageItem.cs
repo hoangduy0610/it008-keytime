@@ -10,26 +10,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using IronXL;
+using System.Diagnostics;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace IT008_KeyTime
 {
     public partial class ManageItem : Form
     {
         protected string _searchKeyword;
-        private BackgroundWorker backgroundWorker2;
 
         public ManageItem()
         {
             InitializeComponent();
             backgroundWorker1.RunWorkerAsync();
-
-            backgroundWorker2 = new BackgroundWorker();
-            backgroundWorker2.DoWork += new DoWorkEventHandler(backgroundWorker2_DoWork);
         }
 
         private void clearForm()
@@ -220,6 +213,20 @@ namespace IT008_KeyTime
             HideLoading();
         }
 
+        public void ReloadAfterImport()
+        {
+            if (this.dataGridView1.InvokeRequired)
+            {
+                this.dataGridView1.Invoke(new Action(() => ReloadAfterImport()));
+            }
+            else
+            {
+                backgroundWorker1.RunWorkerAsync();
+                clearForm();
+            }
+            HideLoading();
+        }
+
         public void HideLoading()
         {
             if (this.pictureBox1.InvokeRequired)
@@ -261,11 +268,6 @@ namespace IT008_KeyTime
         }
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            this.Invoke(new Action(() =>
-            {
-                materialButton6.Enabled = false;
-                Cursor.Current = Cursors.WaitCursor;
-            }));
             // Lấy tham số truyền vào từ RunWorkerAsync
             string filePath = e.Argument as string;
 
@@ -274,18 +276,12 @@ namespace IT008_KeyTime
 
             foreach (var item in items)
             {
+                Console.WriteLine(item.name);
                 PostgresHelper.Insert(item);
             }
 
             // Gọi hàm cập nhật UI nếu cần thiết
-            this.Invoke(new Action(() =>
-            {
-                //Cursor.Current = Cursors.Default;
-                //materialButton6.Enabled = true;
-                backgroundWorker1.RunWorkerAsync();
-                MessageBox.Show("Add new list successfully.");
-                clearForm();
-            }));
+            ReloadAfterImport();
         }
         private void Item_Load(object sender, EventArgs e)
         {
@@ -328,6 +324,8 @@ namespace IT008_KeyTime
             {
                 string filePath = openFileDialog.FileName;
                 ShowLoading();
+                materialButton6.Enabled = false;
+                Cursor.Current = Cursors.WaitCursor;
                 backgroundWorker2.RunWorkerAsync(filePath);
             }
         }
@@ -335,11 +333,12 @@ namespace IT008_KeyTime
         {
             List<Item> items = new List<Item>();
 
-            WorkBook workbook = WorkBook.Load(filePath);
-            WorkSheet worksheet = workbook.WorkSheets.First();
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Open(filePath);
+            Excel.Worksheet worksheet = workbook.Worksheets[1];
 
             bool flag = false;
-            foreach (var row in worksheet.Rows)
+            foreach (Excel.Range row in worksheet.UsedRange.Rows)
             {
                 if (flag == false)
                 {
@@ -348,76 +347,40 @@ namespace IT008_KeyTime
                 }
 
                 Item item = new Item();
+                item.name = row.Cells[1].Value.ToString();
+                item.room = row.Cells[2].Value.ToString();
+                item.description = row.Cells[3].Value.ToString();
+                string Status = row.Cells[4].Value.ToString();
+                item.status = 0;
 
-                item.name = row.Columns[1].ToString(); 
-                item.room = row.Columns[2].ToString();      
-                item.description = row.Columns[3].ToString();
-                
-                string Status = row.Columns[4].ToString();
-
-                switch (Status)
-                {
-                    case "IDLE":
-                        item.status = 0;
-                        break;
-                    case "IN USE":
-                        item.status = 1;
-                        break;
-                    case "BROKEN":
-                        item.status = 2;
-                        break;
-                    case "LOST":
-                        item.status = 3;
-                        break;
-                    default:
-                        item.status = -1;
-                        break;  
-                }
-
-
-                item.note = row.Columns[5].ToString();
+                Console.WriteLine(Status, item.status);
+                item.note = row.Cells[5].Value.ToString();
                 items.Add(item);
             }
 
             workbook.Close();
+            excelApp.Quit();
             return items;
         }
-
-        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
-            this.Show();
-        }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            IT008_KeyTime.Commons.MenuStripUtils.LogOut();
-            this.Close();
-        }
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void logoutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             IT008_KeyTime.Commons.MenuStripUtils.LogOut();
             this.Show();
         }
-
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            IT008_KeyTime.Commons.MenuStripUtils.ExitCurForm(this);
         }
-
         private void changePasswordToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             IT008_KeyTime.Commons.MenuStripUtils.ChangePassword();
             this.Show();
+        }
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IT008_KeyTime.Commons.MenuStripUtils.Help();
         }
     }
 }
