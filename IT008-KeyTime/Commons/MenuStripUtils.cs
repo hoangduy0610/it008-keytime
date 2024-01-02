@@ -39,7 +39,7 @@ namespace IT008_KeyTime.Commons
         }
         public static void Help()
         {
-            
+            System.Diagnostics.Process.Start("https://github.com/hoangduy0610/it008-keytime");
         }
     }
 }
