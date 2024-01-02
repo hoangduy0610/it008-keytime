@@ -89,24 +89,17 @@ namespace IT008_KeyTime.Views.Item.Rental
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            User currentUser = IT008_KeyTime.Commons.Store._user;
-            if (currentUser.role == 4)
-            {
-                materialButton2.Enabled = false;
-                materialButton4.Enabled = false;
-            }
-
             materialButton2.Enabled = false;
+            User currentUser = IT008_KeyTime.Commons.Store._user;
+            if (currentUser.role != 4)
+            {
+                materialButton2.Enabled = true;
+            }
+            
             Cursor.Current = Cursors.WaitCursor;
             // update status of rental item to REJECTED
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                if (currentUser.role == 4)
-                {
-                    materialButton2.Enabled = false;
-                    materialButton4.Enabled = false;
-                }
-
                 var selectedRows = dataGridView1.SelectedRows;
                 foreach (DataGridViewRow row in selectedRows)
                 {
@@ -139,24 +132,18 @@ namespace IT008_KeyTime.Views.Item.Rental
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
+            materialButton4.Enabled = false;
             User currentUser = IT008_KeyTime.Commons.Store._user;
-            if (currentUser.role == 4)
+            if (currentUser.role != 4)
             {
-                materialButton2.Enabled = false;
-                materialButton4.Enabled = false;
+                materialButton4.Enabled = true;
             }
 
-            materialButton4.Enabled = false;
+            
             Cursor.Current = Cursors.WaitCursor;
             // update status of rental item to APPROVED
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                if (currentUser.role == 4)
-                {
-                    materialButton2.Enabled = false;
-                    materialButton4.Enabled = false;
-                }
-
                 var selectedRows = dataGridView1.SelectedRows;
                 foreach (DataGridViewRow row in selectedRows)
                 {
@@ -200,12 +187,10 @@ namespace IT008_KeyTime.Views.Item.Rental
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 User currentUser = IT008_KeyTime.Commons.Store._user;
-                if (currentUser.role == 4)
+                if (currentUser.role <= 2)
                 {
-                    materialButton2.Enabled = false;
-                    materialButton4.Enabled = false;
-
-                    return;
+                    materialButton3.Enabled = true;
+                    materialButton5.Enabled = true;
                 }
 
                 var selectedRow = dataGridView1.SelectedRows[0];

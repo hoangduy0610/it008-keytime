@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using IronXL;
+using System.Diagnostics;
 
 namespace IT008_KeyTime
 {
@@ -349,33 +350,13 @@ namespace IT008_KeyTime
                 }
 
                 Item item = new Item();
-
                 item.name = row.Columns[1].ToString(); 
                 item.room = row.Columns[2].ToString();      
                 item.description = row.Columns[3].ToString();
-                
                 string Status = row.Columns[4].ToString();
-
-                switch (Status)
-                {
-                    case "IDLE":
-                        item.status = 0;
-                        break;
-                    case "IN USE":
-                        item.status = 1;
-                        break;
-                    case "BROKEN":
-                        item.status = 2;
-                        break;
-                    case "LOST":
-                        item.status = 3;
-                        break;
-                    default:
-                        item.status = -1;
-                        break;  
-                }
-
-
+                item.status = 0;
+                
+                Console.WriteLine(Status, item.status);        
                 item.note = row.Columns[5].ToString();
                 items.Add(item);
             }

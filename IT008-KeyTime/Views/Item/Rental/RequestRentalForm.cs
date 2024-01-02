@@ -133,6 +133,7 @@ namespace IT008_KeyTime
 
             PostgresHelper.Insert(rentalItem);
             MessageBox.Show("Request success");
+            backgroundWorker1.RunWorkerAsync();
             materialButton1.Enabled = true;
             Cursor.Current = Cursors.Default;
             clearForm();
