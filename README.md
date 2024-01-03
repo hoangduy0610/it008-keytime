@@ -1,8 +1,5 @@
 <a name="readme-top"></a>
 <!-- PROJECT SHIELDS -->
-<!--
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
